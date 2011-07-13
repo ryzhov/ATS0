@@ -1,0 +1,26 @@
+svn checkout http://svn.asterisk.org/svn/asterisk/branches/1.8 asterisk
+cd asterisk
+contrib/scripts/get_ilbc_source.sh
+contrib/scripts/get_mp3_source.sh
+
+sudo yum install gcc
+sudo yum install gcc-c++
+sudo yum install make
+sudo yum install libxml2-devel
+sudo yum install ncurses-devel
+sudo yum install postgresql-devel postgresql-server postgresql
+sudo yum install libcurl-devel
+sudo yum install openssl-devel
+sudo yum install doxygen
+
+./configure
+make menuselect
+make
+sudo make install
+sudo make samples
+sudo make progdocs
+
+sudo cp contrib/init.d/rc.redhat.asterisk /etc/init.d/asterisk
+sudo chkconfig --add asterisk
+sudo cp codec_g723-ast18-gcc4-glibc-x86_64-barcelona.so /usr/lib/asterisk/modules/
+sudo cp codec_g729-ast18-gcc4-glibc-x86_64-barcelona.so /usr/lib/asterisk/modules/
