@@ -1,0 +1,1 @@
+([12]xxx|0,[2-9]xxxxxx|0,15xx|0,1xx|0,0xxxxxxxxx|<000:>380xxxxxxxxxS0|<000:>[17]xxxxxxxxxx|<000:>[2345689]xxxxxxxxxxx.)
