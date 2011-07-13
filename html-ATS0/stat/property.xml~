@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<property>
-    <name>stat</name>
-    <menu_guest>Statistic</menu_guest>
-    <menu_user>Statistic</menu_user>
-</property>

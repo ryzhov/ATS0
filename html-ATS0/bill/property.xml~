@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<property>
-    <name>bill</name>
-    <menu>Bills</menu>
-    <menu_auth>Bills</menu_auth>
-</property>
