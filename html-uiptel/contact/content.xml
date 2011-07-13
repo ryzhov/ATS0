@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="contact">
+    <table>
+	<tr>
+	    <td class="cell">Телефоны администратора: </td>
+	    <td class="cell">+380936710427, +380953841081</td>
+	</tr>
+	<tr>
+	    <td class="cell">Адрес электронной почты:</td>
+	    <td class="cell"><img id="email" src="images/email.jpg"/></td>
+	</tr>
+	<tr>
+	    <td class="cell">Почтовый адрес:</td>
+	    <td class="cell">83052 Украина, город Донецк, улица Овнатаняна 16А</td>
+	</tr>
+    </table>
+</div>

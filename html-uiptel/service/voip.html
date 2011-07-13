@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="service_voip_content">
+    <div>
+	Тарифная политика компании UIPTEL достаточно прозрачная, сегодня существует
+	всего четыре тарифных плана которые отражают следующую идею, чем больше
+	объем трафика клиента, тем меньше итоговый тариф не зависимо от 
+	используемых направлений.
+    </div>
+    <br/>
+    <table>
+	<tr>
+	    <td class="header">Тарифный план</td>
+	    <td class="header">Объем трафика в месяц</td>
+	</tr>
+	<tr>
+	    <td class="service">Business-0</td>
+	    <td class="service">менее 10 часов</td>
+	</tr>
+	<tr>
+	    <td class="service">Business-10</td>
+	    <td class="service">от 10 и менее 30 часов</td>
+	</tr>
+	<tr>
+	    <td class="service">Business-30</td>
+	    <td class="service">от 30 и менее 70 часов</td>
+	</tr>
+	<tr>
+	    <td class="service">Business-70</td>
+	    <td class="service">более 70 часов</td>
+	</tr>
+    </table>
+    <br/>
+    <div>Полный тарифный план содержит более семи тысяч направлений, его можно заказать,
+	обратившись непосредственно по электронной почте в нашу компанию. 
+	<br/>
+	Контактная информация находится здесь <a href="/?op=contact">Контакты</a>.
+    </div>
+    <br/>
+    <div> Для определения тарифа на конкретное направление воспользуйтесь следующей формой:
+    </div>
+    <br/>
+    <div id="voip_plan_form">
+	<table>
+	    <tr>
+		<td class="header">Тарифный план</td>
+		<td class="header">Телефон (формат E.164)</td>
+	    </tr>
+	    <tr>
+		<td class="service">
+		    <select id="PlanList"></select>
+		</td>
+		<td class="service">
+		    +<input id="PhoneNumber" type="text" size="16" value=""/>
+		    <a id="getPlan" href="javascript:void(0)" onclick="getPlanHandler()">Показать тариф</a>
+		</td>
+	    </tr>
+	</table>
+	
+    </div>
+</div>

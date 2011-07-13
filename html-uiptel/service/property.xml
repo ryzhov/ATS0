@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property>
+    <guest>
+	<name>service</name>
+	<required>disable</required>
+	<menu>Услуги и Тарифы</menu>
+    </guest>
+    <user>
+    </user>
+</property>

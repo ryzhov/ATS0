@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="connect">
+    <div>
+	Для подключения услуг компании UIPTEL необходимо заполнить форму заявки
+	представленную на этой странице, если у Вас есть вопросы обращайтесь к Нашим 
+	администраторам.<br/>
+	Контактная информация находится здесь <a href="/?op=contact">Контакты</a>.
+    </div>
+    <table id="connect_order_form">
+	<tr>
+	    <td class="top_cell" colspan="2">Заявка (все поля необходимо заполнить)</td>
+	</tr>
+	<tr>
+	    <td id="message_cell" colspan="2"></td>
+	</tr>
+	<tr>
+	    <td class="cell">Название организации (для частного лица укажите Имя):</td>
+	    <td class="cell"><input id="username" type="text" size="46" value=""/></td>
+	</tr>
+	<tr>
+	    <td class="cell">Заявка в свободной форме (опишите коротко, что Вы хотите):</td>
+	    <td class="cell"><textarea id="content" cols="63" rows="7"></textarea></td>
+	</tr>
+	<tr>
+	    <td class="cell">Контактный телефон:</td>
+	    <td class="cell"><input id="phone" type="text" size="26" value=""/></td>
+	</tr>
+	<tr>
+	    <td class="bottom_cell" colspan="2">
+		<a id="order_submit" href="javascript:void(0)" onclick="submitOrder()">
+		    Отправить заявку
+	        </a>
+	    </td>
+        </tr>
+    </table>
+</div>

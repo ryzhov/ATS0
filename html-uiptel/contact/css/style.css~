@@ -1,0 +1,15 @@
+
+td.cell {
+    padding-right: 2em;
+}
+
+td.bottom_cell {
+    text-align: center;
+    padding-top: 3em;
+}
+
+td.top_cell {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 0em;
+}

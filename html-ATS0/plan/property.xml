@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property>
+    <name>plan</name>
+    <menu_guest>Plans</menu_guest>
+    <menu_user>Plans</menu_user>
+    <php_layout>plan.php</php_layout>
+</property>

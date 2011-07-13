@@ -1,0 +1,3 @@
+$ curl -L http://github.com/facebook/php-sdk/tarball/master | tar xvz
+$ mv facebook-php-sdk-* facebook-php-sdk
+$ cp facebook-php-sdk/examples/example.php index.php

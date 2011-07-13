@@ -1,0 +1,28 @@
+
+
+div#auth {
+    width: 100%;
+    text-align:center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+div#login_status {
+    width: 100%;
+    text-align:center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+div#logout_status {
+    width: 100%;
+    text-align:center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

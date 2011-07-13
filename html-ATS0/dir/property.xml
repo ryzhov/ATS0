@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property>
+    <name>dir</name>
+    <menu_guest>Directions</menu_guest>
+    <menu_user>Directions</menu_user>
+</property>

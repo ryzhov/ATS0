@@ -1,0 +1,13 @@
+div#company {
+    text-align: left;
+    border-style: solid;
+    border-width: 0px;
+    border-color: red;
+}
+
+div.company {
+    margin-bottom: 1em;
+}
+span.company {
+    margin: 0em;
+}

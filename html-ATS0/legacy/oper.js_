@@ -1,0 +1,335 @@
+var curr=0; 		// current active operator 
+var oper = new Array();	// array of operators
+var dir = new Array();  // array of Dirs
+//-------------------------------------------------------------------------------
+
+function loadDirListener() {
+    var xml = null;
+
+    if (this.readyState == 4) {
+	if (this.status == 200) {
+	    if (this.responseXML != null) {
+		//alert("responseXML != null");
+		xml=this.responseXML.documentElement;
+		fillSelectDirList(xml);
+	    }
+	    else {
+		alert("response XML document empty");
+	    }
+	}
+	else
+	    alert("Error code " + this.status + " received: " + this.statusText);
+    }
+}//loadDirListener
+
+function fillSelectDirList(xml) {
+    var exml = xml.getElementsByTagName('Direction');
+    var i=0;
+
+    for(i=0;i<exml.length;++i) {
+	dir[i] = new Direction(exml[i]);
+    }
+
+    //alert("dir.length="+dir.length);
+
+    el = document.getElementById("direction");
+    for(i=0; i<dir.length; ++i) {
+	tmp = document.createElement("option");
+	tmp.setAttribute("value", dir[i].dir);
+	tmp.appendChild(document.createTextNode(dir[i].dir+" - "+dir[i].dirName));
+	el.appendChild(tmp);
+    }
+}//fillSelectDirList
+
+function loadOp() {
+    var xml;
+    var el;
+    var i=0;
+
+    xml = sendSync1("xml/loadOp.php");
+    el = xml.getElementsByTagName('Operator');
+
+    for(i=0;i<el.length;++i) {
+	oper[i] = new Operator(el[i]);
+    }
+
+}//loadOp
+
+function doPage() {
+    var dl = document.getElementById("operator");
+    var tmp;
+    var tmpDiv,tmpInput,tmpSpan;
+    var i,j;
+
+    //delete all nodes in select Operator
+    while (dl.lastChild != null) {
+	dl.removeChild(dl.lastChild);
+    }
+
+    //create new nodes in select
+    for(i=0; i<oper.length; ++i) {
+	tmp = document.createElement("option");
+	tmp.setAttribute("value", oper[i].op);
+	if(curr==i) {
+	    tmp.setAttribute("selected", "true");
+	}
+	tmp.appendChild(document.createTextNode(oper[i].name));
+	dl.appendChild(tmp);
+    }
+
+    //delete all nodes in ip block
+    dl = document.getElementById("ip");
+    while (dl.lastChild != null) {
+	dl.removeChild(dl.lastChild);
+    }
+
+    //create ip block
+    for(i=0; i<oper[curr].ip.length; ++i) {
+	tmpDiv = document.createElement("div");
+	tmpDiv.setAttribute("class","ip");
+	tmpInput = document.createElement("input");
+	tmpInput.setAttribute("class","ip");
+	tmpInput.setAttribute("type","checkbox");
+	tmpInput.setAttribute("onchange","oper["+curr+"].ip["+i+"].flip()");
+	tmpSpan = document.createElement("span");
+	tmpSpan.setAttribute("class","ip");
+	tmpSpan.appendChild(document.createTextNode(oper[curr].ip[i].ip));
+	tmpDiv.appendChild(tmpInput);
+	tmpDiv.appendChild(tmpSpan);
+	dl.appendChild(tmpDiv);
+    }
+
+    //delete all nodes in plan block
+    dl = document.getElementById("plan");
+    while (dl.lastChild != null) {
+	dl.removeChild(dl.lastChild);
+    }
+
+    //create plan block
+    //alert("plan.length="+oper[curr].plan.length);
+    for(i=0; i<oper[curr].plan.length; ++i) {
+	tmpDiv = document.createElement("div");
+	tmpDiv.setAttribute("class","plan");
+
+	tmpInput = document.createElement("input");
+	tmpInput.setAttribute("class","plan");
+	tmpInput.setAttribute("type","checkbox");
+	tmpInput.setAttribute("onchange","oper["+curr+"].plan["+i+"].flip()");
+	tmpDiv.appendChild(tmpInput);
+
+	tmpSpan = document.createElement("span");
+	tmpSpan.setAttribute("class","planDir");
+	tmpSpan.appendChild(document.createTextNode(oper[curr].plan[i].dir));
+        tmpDiv.appendChild(tmpSpan);
+
+	tmpSpan = document.createElement("span");
+        tmpSpan.setAttribute("class","planDirName");
+        tmpSpan.appendChild(document.createTextNode(oper[curr].plan[i].dirName));
+        tmpDiv.appendChild(tmpSpan);
+
+	tmpSpan = document.createElement("span");
+        tmpSpan.setAttribute("class","planZone");
+        tmpSpan.appendChild(document.createTextNode(oper[curr].plan[i].zone));
+        tmpDiv.appendChild(tmpSpan);
+
+	tmpSpan = document.createElement("span");
+        tmpSpan.setAttribute("class","costIn");
+        tmpSpan.appendChild(document.createTextNode(oper[curr].plan[i].costIn));
+        tmpDiv.appendChild(tmpSpan);
+
+	tmpSpan = document.createElement("span");
+        tmpSpan.setAttribute("class","costOut");
+        tmpSpan.appendChild(document.createTextNode(oper[curr].plan[i].costOut));
+        tmpDiv.appendChild(tmpSpan);
+
+        dl.appendChild(tmpDiv);
+    }
+}//doPage
+
+function eventChange(obj) {
+   //var o = obj.options[obj.selectedIndex];
+   //curr = o.getAttribute("value");
+   curr = obj.selectedIndex;
+   doPage();
+}//eventChange
+
+function delIp() {
+    var i,xml,el;
+    var msg="";
+
+    for(i=0; i<oper[curr].ip.length; ++i) {
+	if(oper[curr].ip[i].delFlag)
+	    msg += "d"+oper[curr].ip[i].ip+":";
+    }
+    if(msg=="")
+	alert("No one ip selected");
+    else {
+	//alert("xml/delOpIp.php?ips="+msg);
+	xml = sendSync1("xml/delOpIp.php?ips="+msg);
+	if(xml!=null) {
+	    el = xml.getElementsByTagName('ip')[0];
+            msg="";
+	    while (el!=null) {
+		if(el.nodeName=="ip") {
+		    msg += el.firstChild.nodeValue+":";
+		}
+		el = el.nextSibling;
+	    }
+	    loadOp();
+	    doPage();
+	    alert("Deleted IP:"+msg); 
+	}
+    }
+}//delIp
+
+function addIp() {
+    var xml;
+    var dl = document.getElementById("newIp");
+    //alert("xml/addOpIp.php?op="+oper[curr].op+"&ip="+dl.value);
+    if(dl.value!="") {
+	xml = sendSync1("xml/addOpIp.php?op="+oper[curr].op+"&ip="+dl.value);
+	if(xml!=null) {
+	    el = xml.getElementsByTagName('ip')[0];
+	    while(el!=null) {
+		if(el.nodeName=="ip") {
+		    dl.value="";
+		    loadOp();
+		    doPage();
+		    alert("Added IP:"+el.firstChild.nodeValue);
+		}
+		el = el.nextSibling;
+	    }
+	}
+    }
+    else
+	alert("No one Ip address specified");
+}//addIp
+
+function delPlan() {
+    var i,xml,el;
+    var url="xml/delPlan.php?op="+oper[curr].op+"&dirs=";
+    var dirs="";
+
+    for(i=0; i<oper[curr].plan.length; ++i) {
+        if(oper[curr].plan[i].delFlag)
+	   dirs += "d"+oper[curr].plan[i].dir+":";
+    }
+    
+    if(dirs=="")
+	alert("No one plan selected");
+    else {
+	//alert(url+dirs);
+	xml = sendSync1(url+dirs);
+	if(xml!=null) {
+	    el = xml.getElementsByTagName('Plan')[0];
+	    dirs="";
+	    while (el!=null) {
+		if(el.nodeName=="Plan") {
+		    dirs += el.firstChild.nodeValue+":";
+		}
+		el = el.nextSibling;
+	    }
+	    loadOp();
+	    doPage();
+	    alert("Deleted plan:"+dirs);
+	}
+    }
+    return true;
+}//delPlan
+
+function addPlan() {
+    var dir  = document.getElementById("direction").value;
+    var zone = document.getElementById("zone").value;
+    var costIn = document.getElementById("cost_in").value;
+    var costOut = document.getElementById("cost_out").value;
+    var op = oper[curr].op;
+    var url = "xml/addPlan.php?op="+op+"&dir="+dir+"&zone="+zone+"&costIn="+costIn;
+        url += "&costOut="+costOut;
+	
+    //alert("url="+url);
+    var xml = sendSync1(url);
+
+    if(xml!=null) {
+	el = xml.getElementsByTagName('Plan')[0];
+	if (el!=null) {
+	    loadOp();
+	    doPage();
+	} 
+	else
+	    alert(dir+" not added");
+    }
+    return true;
+}//addPlan
+
+//-- Class Operator --
+function Operator(el) {
+    this.op = el.getElementsByTagName('op')[0].firstChild.nodeValue;
+    this.name = el.getElementsByTagName('name')[0].firstChild.nodeValue;
+    this.ip = new Array();
+    this.plan = new Array();
+
+    el = el.firstChild;	
+    i = j = 0;
+    while(el!=null) {
+	if(el.nodeName == "ip") {
+	    this.ip[i] = new Ip(el);
+	    ++i;
+	}
+	if(el.nodeName == "Plan") {
+	    this.plan[j] = new Plan(el);
+	    ++j;
+	}
+	el = el.nextSibling;
+    }
+}//Operator
+
+//-- Class Ip --
+function Ip(el) {
+    this.ip = el.firstChild.nodeValue;
+    this.delFlag = false;
+    this.flip = function() {
+	 this.delFlag = !this.delFlag;
+    };
+}//Ip
+
+//-- Class Plan --
+function Plan(el) {
+    this.delFlag = false;
+    this.dir = el.getElementsByTagName('dir')[0].firstChild.nodeValue;
+    this.dirName = el.getElementsByTagName('dirName')[0].firstChild.nodeValue;
+
+    if (el.getElementsByTagName('zone')[0].firstChild == null) {
+	this.zone ="null";
+    }
+    else {
+	this.zone = el.getElementsByTagName('zone')[0].firstChild.nodeValue;
+    }
+
+    if (el.getElementsByTagName('costIn')[0].firstChild == null) {
+	this.costIn = "null";
+    }
+    else {
+	this.costIn=el.getElementsByTagName('costIn')[0].firstChild.nodeValue;
+    }
+
+    if (el.getElementsByTagName('costOut')[0].firstChild == null) {
+	this.costOut = "null";
+    }
+    else {
+	this.costOut = el.getElementsByTagName('costOut')[0].firstChild.nodeValue;
+    }
+
+    this.flip = function() {
+	             this.delFlag = !this.delFlag;
+    };
+}//Plan
+
+//-- Class Direction --
+function Direction(el) {
+    this.dir = el.getElementsByTagName('dir')[0].firstChild.nodeValue;
+    this.dirName = el.getElementsByTagName('dirName')[0].firstChild.nodeValue;
+}//Direction
+
+function ipOnly(e) {
+    return true;
+}//ipOnly

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property>
+    <guest>
+	<name>base</name>
+	<required>enable</required>
+    </guest>
+    <user>
+    </user>
+</property>

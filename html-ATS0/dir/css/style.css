@@ -1,0 +1,54 @@
+span.direction {
+    position:	absolute;
+    left:	2em;
+    width: 11em;
+    border-style: solid;
+    border-width: 0px;
+}
+
+span.dirName {
+    position:	absolute;
+    left:	12em;
+    width: 50em;
+    border-style: solid;
+    border-width: 0px;
+}
+
+div.record {
+    position: relative;
+    height: 1.5em;
+    border: 0px solid blue;
+}
+
+div.record:hover {
+    background: #EFDFFF;
+}
+
+div#content {
+    position: absolute;
+    top: 6em;
+    border: 0px solid blue;
+    width: 50%;
+}
+
+input.direction {
+    position:	absolute;
+    top: 0.25em;
+    left: 0.25em;
+    border: 0px solid blue;
+}
+
+div#manage {
+    position: absolute;
+    top: 3em;
+    border: 0px solid blue;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+      text-decoration: none;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table id="base">
+    <tr>
+	<td id="top" colspan="3">
+	    <span id="username"></span>
+	    <span id="login">пользователь:</span>
+	    <span class="top">UNITED IP TELECOM</span>
+	    <br/>
+	    <span class="top">VoIP телефония &amp; инновационные телеком решения для бизнеса</span>
+	</td>
+    </tr>
+    <tr>
+	<td id="left"></td>
+	<td id="center">
+	    <h1>Сайт в стадии разработки, ждем открытия 9 мая 2011 года!</h1>
+	</td>
+	<td id="right"></td>
+    </tr>
+    <tr>
+	<td id="bottom" colspan="3">
+	    <span>
+		copyright <![CDATA[&copy;]]><span id="copy_year"></span>
+		<a id="bottom_link"></a>
+	    </span>
+	    <!--Openstat-->
+	    <span id="openstat2182632"></span>
+	    <script type="text/javascript">
+		var openstat = { counter: 2182632, next: openstat };
+		(function(d, t, p) {
+		var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+		j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+		var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+		})(document, "script", document.location.protocol);
+	    </script>
+	    <!--/Openstat-->
+	</td>
+    </tr>
+</table>

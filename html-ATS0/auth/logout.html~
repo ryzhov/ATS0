@@ -1,0 +1,12 @@
+
+<div id="logout_status">
+    <span id="do">Logout </span>
+    <span id="status">in progress </span>
+    <span id="message"> ... </span>
+</div>
+
+
+<script type="text/javascript">
+    a = new Auth();
+    a.logout();
+</script>

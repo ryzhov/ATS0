@@ -1,0 +1,28 @@
+
+<div id="manage">
+<a href="#" id="today" onclick="proc('today')">today</a>
+<a href="#" id="yesterday" onclick="proc('yesterday')">yesterday</a>
+<a href="#" id="month" onclick="proc('month')">month</a>
+</div>
+
+<div id="stat">
+</div>
+
+<table id="cdr_log">
+<tr id="cdr_header"><td>CDR loading now ...</td></tr>
+</table>
+
+<script type="text/javascript">
+function proc(period) {
+    stat = new CDR_Stat(period,'ast');
+    stat.initPage();
+    try { 
+	stat.load(); 
+    } catch (e) {
+	alert('exception at stat.load(): '+e);
+    }
+    stat.doPage();
+    return false;
+}//proc
+proc('today');
+</script>

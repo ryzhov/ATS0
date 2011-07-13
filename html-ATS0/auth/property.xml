@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property>
+    <name>auth</name>
+    <menu_guest>login</menu_guest>
+    <menu_user>logout</menu_user>
+    <php_layout>auth.php</php_layout>
+</property>

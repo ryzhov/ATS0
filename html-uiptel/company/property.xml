@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property>
+    <guest>
+	<name>company</name>
+	<required>disable</required>
+	<menu>О компании</menu>
+    </guest>
+    <user>
+    </user>
+</property>

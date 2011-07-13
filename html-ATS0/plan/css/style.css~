@@ -1,0 +1,20 @@
+
+div#plan {
+    width: 100%;
+    text-align: left;
+    border: 0px solid blue;
+    margin: 2em;
+}
+
+select#PlanList {
+    margin-left: 2em;
+    width: 20em;
+}
+
+table#plan_attr {
+    border: 0px solid blue;
+}
+
+div#pager {
+    border: 0px solid blue;
+}

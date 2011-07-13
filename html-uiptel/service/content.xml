@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="service">
+    <div id="service_menu">
+	<a class="service_menu_item" id="service_voip" href="javascript:void(0)">VoIP телефония (A-Z)</a>
+	<a class="service_menu_item" id="service_solution" href="javascript:void(0)">Телеком решения</a>
+    </div>
+    <div id="service_content">
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property>
+    <name>bill</name>
+    <menu_guest>Bills</menu_guest>
+    <menu_user>Bills</menu_user>
+</property>
