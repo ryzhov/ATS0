@@ -1,0 +1,11 @@
+#
+# $Id: README 5894 2009-07-20 13:04:45Z bogdan_iancu $
+#
+
+This examle illustrate how to use ser's FIFO interface
+to initate sending an instant message from a webpage.
+
+To enable this example, you need
+- web server with PHP support
+- install the example webpages on the server
+- have running ser with enabled fifo
