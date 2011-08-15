@@ -1,0 +1,558 @@
+<chapter>
+  <title>Dialog support</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-dialog">dialog</link>
+        </term>
+        <listitem>
+		<para>Persistent dialog information for the dialog module. More 
+		information can be found at: http://www.opensips.org/html/docs/modules/1.5.xdialog.html
+		</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-dialog" frame="all">
+      <title>Table "dialog"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>hash_entry</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Number of the hash entry in the dialog hash table
+		</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>hash_id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The ID on the hash entry</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Call-ID of the dialog</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>from_uri</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The URI of the FROM header (as per INVITE)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>from_tag</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The tag parameter serves as a general mechanism to 
+		identify a dialog, which is the combination of the Call-ID along 
+		with two tags, one from participant in the dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>to_uri</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The URI of the TO header (as per INVITE)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>to_tag</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The tag parameter serves as a general mechanism to 
+		identify a dialog, which is the combination of the Call-ID along 
+		with two tags, one from participant in the dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>mangled_from_uri</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The mangled from URI, in case uac_replace_from
+		was called for this dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>mangled_to_uri</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The mangled to URI, in case uac_replace_to
+		was called for this dialog</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>caller_cseq</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Last Cseq number on the caller side.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callee_cseq</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Last Cseq number on the callee side.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>caller_ping_cseq</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Last Cseq number of pings generated on caller side.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callee_ping_cseq</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Last Cseq number of pings generated on callee side.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>caller_route_set</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>512</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Route set on the caller side.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callee_route_set</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>512</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Route set on on the caller side.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>caller_contact</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Caller's contact uri.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callee_contact</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Callee's contact uri.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>caller_sock</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Local socket used to communicate with caller</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callee_sock</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Local socket used to communicate with callee</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>state</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The state of the dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>start_time</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The timestamp (unix time) when the dialog was confirmed.
+		</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>timeout</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The timestamp (unix time) when the dialog will expire.
+		</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>vars</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>512</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Variables attached to this dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>profiles</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>512</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Profiles this dialog belongs to.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>script_flags</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Script flags for the dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>flags</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Internal flags used by the module.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-dialog-index" frame="all">
+      <title>Table "dialog" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>hash_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>hash_entry, hash_id</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>
