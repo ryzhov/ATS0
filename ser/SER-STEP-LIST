@@ -1,0 +1,22 @@
+
+#vi Makefile
+to enable modules in exclude_modules string
+
+#cd /home/ran/ATS0/ser/build-1.7.0/opensips-1.7.0-beta-notls
+#make all
+#sudo make prefix=/usr/local install
+
+#vi /etc/rsyslog.conf
+to add line 
+local0.*                                                /var/log/opensips.log
+#sudo service rsyslog restart
+
+#vi /usr/local/etc/opensips/opensipsctlrc
+to enable MySQL Engine and setup password
+
+#service mysqld start
+#/usr/bin/mysql_secure_installation
+#sudo chkconfig  mysqld on
+#/usr/local/sbin/opensipsdbctl create 
+to create database
+#mysql < GRANT ALL PRIVILEGES ON opensips.* TO opensips@localhost IDENTIFIED BY 'pass4sips';
