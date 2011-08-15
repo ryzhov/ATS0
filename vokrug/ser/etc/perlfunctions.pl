@@ -65,7 +65,7 @@ sub authorize {
 	log(L_INFO,"authType[$authType]");
 
 	if ($authType eq 'Digest') {
-	    &auth_vokr($params{'username'}, $params{'response'});
+	    #&auth_vokr($params{'username'}, $params{'response'});
 	}
 
 
