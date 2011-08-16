@@ -1,3 +1,4 @@
+#!/usr/bin/perl -w
 #### /usr/local/etc/opensips/perlfunctions.pl
 #
 #
@@ -6,43 +7,43 @@ use OpenSIPS qw ( log );
 use OpenSIPS::Constants;
 use strict;
 
-
-sub sendSipMessage {
-    my $ip = shift;
-    my $port = shift;
-    my $msg = shift;
-    my $sock = new IO::Socket::INET (
-	PeerAddr  => $ip,
-	PeerPort  => $port,
-	Proto     => 'udp',
-	LocalPort => '5060',
-	ReuseAddr => '1' );
-    
-    return unless $sock;
-    print $sock $msg;
-    close($sock);
-}# sendSipMessage
-
 #### {"user_id":1212,"auth_key":"ashgfasgfaisygfasiygf"}
 sub auth_vokr {
     my $req = '{"user_id":' . $_[0] . ',"auth_key":"' . $_[1] . '"}';
+    my %rsp = ('status' => 'PENDING', 'msg' => undef);
     
     my $sock = new IO::Socket::INET (
 	PeerAddr => 'vokrug.ru',
 	PeerPort => '7000',
 	Proto => 'tcp',
+	Timeout => 2,
     );
 
 
     if ($sock) {
-	print $sock $req;
-	log(L_INFO,"req [" . $req . "]");
-	#log(L_INFO, "recv [" . <$sock> . "]");
+	if ($sock->send($req, 0)) {
+	    my ($rout,$rin) = ('',''); 
+	    vec($rin, fileno($sock), 1) = 1;
+	    select($rout = $rin, undef, undef, 0.4); #TIMEOUT 0.4 sec
+	    
+	    if (vec($rout, fileno($sock), 1)) {
+		$sock->recv($rsp{'msg'},32, MSG_DONTWAIT);
+		$rsp{'status'} = 'OK';
+	    } else {
+		$rsp{'status'} = 'TIMEOUT';
+		$rsp{'msg'} = 'No answer';
+	    }
+	} else {
+	    $rsp{'status'} = 'ERROR';
+	    $rsp{'msg'} = "Can't send: $!";
+	}
+	close($sock);
     } else {
-	log(L_INFO,"Error open socket");
+	$rsp{'status'} = 'ERROR';
+	$rsp{'msg'} = "Couldn't connect: $@";
     }
-
-    close($sock);
+    
+    return %rsp;
 }# auth_vokr
 
 sub authorize {
@@ -59,13 +60,24 @@ sub authorize {
 
 	if ($auth =~ /^(\w+)\s+(.*)$/) {
 	    $authType = $1;
-	    %params = map { if (/^(\w+)="?([^"]+)"?$/) {($1,$2)} } split /,/, $2;
+	    %params = map { if (/^(\w+)="?([^"]+)"?$/) {($1,$2)} } split /,\s*/, $2;
 	}
 	
 	log(L_INFO,"authType[$authType]");
 
+	my ($str,$key);
+	foreach $key (sort keys %params) {
+	    $str .= "$key($params{$key}) ";
+	}
+	log(L_INFO,$str);
+
 	if ($authType eq 'Digest') {
-	    #&auth_vokr($params{'username'}, $params{'response'});
+	    if ($params{'username'} && $params{'response'}) {
+		my %rsp = &auth_vokr($params{'username'}, $params{'response'});
+		log(L_INFO,"$params{'username'}:$params{'response'} -> $rsp{'status'}:$rsp{'msg'}");
+	    } else {
+		log(L_INFO,"unsufisient credentials");
+	    }
 	}
 
 

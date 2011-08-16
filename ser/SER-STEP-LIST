@@ -20,3 +20,8 @@ to enable MySQL Engine and setup password
 #/usr/local/sbin/opensipsdbctl create 
 to create database
 #mysql < GRANT ALL PRIVILEGES ON opensips.* TO opensips@localhost IDENTIFIED BY 'pass4sips';
+
+#sudo ln -s `pwd`/rc/opensips /etc/init.d/opensips
+#sudo chkconfig --add opensips
+
+#opensipsctl domain add v.uiptel.com
