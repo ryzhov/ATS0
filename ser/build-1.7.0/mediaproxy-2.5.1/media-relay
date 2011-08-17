@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+
+# Copyright (C) 2008 AG Projects
+#
+
+"""MediaProxy Relay component"""
+
+
+if __name__ == "__main__":
+    import sys
+    from optparse import OptionParser
+    from application.process import process, ProcessError
+    from application.configuration import ConfigFile, datatypes
+    from application import log
+    import mediaproxy
+
+    name = "media-relay"
+    fullname = "MediaProxy Relay"
+    description = "MediaProxy Relay component"
+
+    default_pid = mediaproxy.runtime_directory + '/relay.pid'
+
+    parser = OptionParser(version="%%prog %s" % mediaproxy.__version__)
+    parser.add_option("--no-fork", action="store_false", dest="fork", default=1, help="run the process in the foreground (for debugging)")
+    parser.add_option("--pid", dest="pid_file", default=default_pid, help="pid file (%s)" % default_pid, metavar="File")
+    (options, args) = parser.parse_args()
+
+    if not sys.platform.startswith('linux2'):
+        log.fatal("Cannot start %s. A Linux host is required for operation." % fullname)
+        sys.exit(1)
+
+    try:
+        mediaproxy.dependencies.check()
+    except mediaproxy.DependencyError, e:
+        log.fatal(str(e))
+        sys.exit(1)
+
+    pid_file = options.pid_file
+
+    process.system_config_directory = mediaproxy.system_config_directory
+    config_file = ConfigFile(mediaproxy.configuration_filename)
+    log.level.current = config_file.get_setting("Relay", 'log_level', type=datatypes.LogLevel, default=log.level.DEBUG)
+
+    try:
+        process.runtime_directory = mediaproxy.runtime_directory
+    except ProcessError, e:
+        log.fatal("Cannot start %s: %s" % (fullname, e))
+        sys.exit(1)
+
+    if options.fork:
+        try:
+            process.daemonize(pid_file)
+        except ProcessError, e:
+            log.fatal("Cannot start %s: %s" % (fullname, e))
+            sys.exit(1)
+        log.start_syslog(name)
+
+    log.msg("Starting %s %s" % (fullname, mediaproxy.__version__))
+
+    try:
+        from mediaproxy.relay import MediaRelay
+        if not options.fork:
+            from application.debug.memory import *
+        relay = MediaRelay()
+    except Exception, e:
+        log.fatal("failed to create %s: %s" % (fullname, e))
+        if e.__class__ is not RuntimeError:
+            log.err()
+        sys.exit(1)
+
+    relay.run()
+
+    if not options.fork:
+        #from application.debug.memory import *
+        memory_dump()

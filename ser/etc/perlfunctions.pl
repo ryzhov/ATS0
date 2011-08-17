@@ -9,7 +9,7 @@ use strict;
 
 #### {"user_id":1212,"auth_key":"ashgfasgfaisygfasiygf"}
 sub auth_vokr {
-    my $req = '{"user_id":' . $_[0] . ',"auth_key":"' . $_[1] . '"}';
+    my $req = shift;
     my %rsp = ('status' => 'PENDING', 'msg' => undef);
     
     my $sock = new IO::Socket::INET (
@@ -50,7 +50,7 @@ sub authorize {
     my $m = shift;
     my $auth = $m->getHeader("Authorization");
     my $authType;
-    my $res = 'defined';
+    my $res = 'ok';
     my %params;
 
     log(L_INFO, "authorize::".$m->getMethod());
@@ -73,8 +73,9 @@ sub authorize {
 
 	if ($authType eq 'Digest') {
 	    if ($params{'username'} && $params{'response'}) {
-		my %rsp = &auth_vokr($params{'username'}, $params{'response'});
-		log(L_INFO,"$params{'username'}:$params{'response'} -> $rsp{'status'}:$rsp{'msg'}");
+		my $req = '{"user_id":"'.$params{'username'}.'","auth_key":"'.$params{'response'}.'"}';
+		my %rsp = &auth_vokr($req);
+		log(L_INFO,"$req -> $rsp{'status'}:$rsp{'msg'}");
 	    } else {
 		log(L_INFO,"unsufisient credentials");
 	    }

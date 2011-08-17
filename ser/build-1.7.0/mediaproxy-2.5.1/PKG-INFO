@@ -1,0 +1,337 @@
+Metadata-Version: 1.0
+Name: mediaproxy
+Version: 2.5.1
+Summary: MediaProxy
+Home-page: http://www.ag-projects.com/MediaProxy.html
+Author: AG Projects
+Author-email: support@ag-projects.com
+License: GPL
+Description: ----------
+        
+        Copyright (c) 2008-2010 AG Projects
+        http://ag-projects.com
+        
+        Authors: Ruud Klaver, Dan Pascu, Saul Ibarra
+        
+        Home page: http://mediaproxy-ng.org
+        
+        
+        License
+        -------
+        
+        This software is licensed according to the GNU General Public License
+        version 2. See LICENSE file for more details.
+        
+        For other licensing options please contact sales-request@ag-projects.com
+        
+        
+        Description
+        -----------
+        
+        MediaProxy is a media relay for RTP/RTCP and UDP streams that works in
+        tandem with OpenSIPS to provide NAT traversal capability for media streams
+        from SIP user agents located behind NAT.
+        
+        When using MediaProxy, NAT traversal for RTP media will work without any
+        settings in the SIP User Agents or the NAT router.
+        
+        
+        Features
+        --------
+        
+         - Scalability of thousands of calls per server limited only by the Linux
+           kernel networking layer and network interface bandwidth
+         - Supports multiple chained relays as long as each has a public IP
+         - TLS encryption between the relays and dispatcher
+         - T.38 fax support
+         - Graceful shutdown capability
+         - Automatic load balancing and redundancy among all media relays
+         - Real-time sessions statistics
+         - Configurable IP and UDP port range
+         - Support for any combination of audio and video streams
+         - Ability to use OpenSIPS' MI interface to close a call that did timeout
+         - Radius accounting of IP network traffic
+         - Database accounting of complete media information including all streams,
+           their type, codecs and duration.
+         - Supports ICE negotiation by behaving like a TURN relay candiate
+        
+        
+        Background
+        -----------
+        
+        MediaProxy 2.0 is the second generation media relay application which is
+        based on a completely new design that allows for major improvements in areas
+        such as scalability (an order of magnitude more scalable than previous
+        version) and security (communication between relay and dispatcher is
+        encrypted).
+        
+        New features have been added to support call flows related to user mobility
+        and fax transmission.
+        
+        
+        Architecture
+        ------------
+        
+        MediaProxy consists of a dispatcher and one or more media relays.
+        
+        The dispatcher component always runs on the same host as OpenSIPS and
+        communicates with its mediaproxy module through a UNIX domain socket. The
+        relay(s) connect to the dispatcher using TLS. This relay component may be on
+        the same or on a different host as OpenSIPS. There may be several relays for
+        the dispatcher to choose from and a relay may service more than one
+        dispatcher.
+        
+        When OpenSIPS requests that a call be relayed, the dispatcher will forward
+        this request to one of its connected relays, along with some data from the
+        SDP. The relay will allocate a set of UDP ports for this session, depending
+        on the number of proposed streams. It will inform the dispatcher which ports
+        it has allocated so that it may in turn notify the mediaproxy module of
+        OpenSIPS, which will replace the relevant parts of the SDP.
+        
+        The same is done for any SIP messages from the callee, thus all the media
+        streams will be sent through the relay. When the session between caller and
+        callee has finished, either through a SIP BYE or because the media is no
+        longer flowing and has timed out, the relay will send session information to
+        the dispatcher, which can store this information using one or more accounting
+        modules.
+        
+        The session information may also be queried using a management interface on
+        the dispatcher.
+        
+        All of this is illustrated in the following diagram:
+        
+          +---+                                              +---+
+          |   |   +---------------------+                    |   |
+          |   |   |           SIP Proxy |                    |   |
+          |   |   |  +----------+       |        SIP         |   |
+          |   |<--+->| OpenSIPS |<------+------------------->|   |
+          |   |   |  +----------+       |                    |   |
+          |   |   |       ^             |                    |   |
+          |   |   |       | UNIX socket |                    |   |
+          | C |   |       v             |                    | C |
+          | A |   | +------------+      |   +------------+   | A |
+          | L |   | | Dispatcher |<-----+-->| Management |   | L |
+          | L |   | +------------+  TCP |   |   client   |   | L |
+          | E |   |         ^      /TLS |   +------------+   | E |
+          | R |   |         |           |                    | E |
+          |   |   +---------+-----------+                    |   |
+          |   |             |                                |   |
+          |   |             | TLS                            |   |
+          |   |             v                                |   |
+          |   |      +-------------+           UDP           |   |
+          |   |<---->|    Relay    |<----------------------->|   |
+          |   |      +-------------+        RTP / RTCP       |   |
+          +---+                                              +---+
+        
+        Please note that the accounting modules are not shown.
+        
+        
+        Compatibility and pre-requisites
+        --------------------------------
+        
+        Both OpenSIPS and MediaProxy must use a public IP address.
+        
+        To run the software, you will need a server running the Linux Operating
+        System using a kernel version 2.6.18 or higher that has been compiled with
+        connection tracking support (conntrack). IPtables 1.4.3 or higher is also
+        required. Because of this dependency on Linux, other operating systems are
+        not supported. This dependency only applies to the media relay component.
+        The dispatcher component which runs on the same host as OpenSIPS, can run
+        on any platform that has a python interpreter and supports the twisted
+        framework.
+        
+        Communication between the dispatcher and the relays uses TLS encryption and
+        requires a set of X509 certificates to work. For more information about this
+        please read tls/README which contains information about the sample certificates
+        that are included as well as information about how to generate your own.
+        
+        MediaProxy is meant to be used together with OpenSIPS' mediaproxy module.
+        
+        This version of MediaProxy (2.0 or higher) cannot be used in combination
+        with any version of OpenSIPS older than 1.4 or any components of MediaProxy
+        older than 2.0. You must completely upgrade any previous installation of
+        OpenSER to OpenSIPS to use this version of MediaProxy.
+        
+        No STUN or TURN support are required in the clients.
+        
+        The SIP User Agents must work symmetrically (that is to send and receive
+        data on the same port for each stream), which is documented in RFC 4961.
+        
+        To display the history of the media streams CDRTool 6.5 or higher is
+        required.
+        
+        Some features that were present in the previous version have been removed:
+        
+        - Support for specifying media relays per domain has been discontinued
+        - Support for DNS records has been discontinued
+        - Support for asymmetric clients has been discontinued
+        - Support for other operating systems than Linux has been discontinued
+          (only for the media relay, as the dispatcher has no such limitation)
+        
+        For information of how to install MediaProxy, please consult the INSTALL
+        file.
+        
+        
+        Operation
+        ---------
+        
+        Before the relay is run, please make sure that /proc/sys/net/ipv4/ip_forward
+        is set to "1".
+        
+        Both the dispatcher and the relay should be executed with root privileges.
+        With no arguments, both applications will automatically fork into the
+        background and log to syslog. They can remain in the foreground and log to
+        console when given the --no-fork argument.
+        
+        The relay can be shut down in two ways. When receiving either an INT or TERM
+        signal, the relay will terminate all of its sessions immediately and inform
+        the dispatcher that those sessions have expired. When given the HUP signal,
+        it will not accept any new sessions from the dispatcher and wait for all of
+        the running sessions to expire, thus terminating gracefully.
+        
+        At the very least a set of TLS credentials is required. Sample certificates
+        for this are included in the tls/ subdirectory.
+        DO NOT USE THESE IN A PRODUCTION ENVIRONMENT, but only for testing purposes.
+        
+        For more information about TLS certificates and how to generate your own,
+        check the tls/README file.
+        
+        
+        Accounting
+        ----------
+        
+        MediaProxy is capable to do additional per call accounting with information
+        related to the media streams used by the call. MediaProxy has a modular
+        interface to the accounting system, allowing for new modules to be easily
+        implemented. Currently it supports database and radius backends. Multiple
+        backends can be configured and used simultaneously.
+        
+        
+        Radius accounting
+        -----------------
+        
+        The radius backend logs very basic information about the media streams. The
+        limited nature of the logged information is mainly given by the limitations
+        imposed by the radius protocol to the data size.
+        
+        The information sent in the radius packet is shown below:
+        
+          Acct-Status-Type = "Update"
+          User-Name = "mediaproxy@default"
+          Acct-Session-Id = call_id
+          Sip-From-Tag = from_tag
+          Sip-To-Tag = to_tag
+          Acct-Session-Time = call duration
+          Acct-Input-Octets = bytes received from caller
+          Acct-Output-Octets = bytes received from callee
+          NAS-IP-Address = media-relay address
+          Sip-User-Agents = caller + callee user agents
+          Sip-Applications = "Audio", "Video", ...
+          Media-Codecs = codecs used by streams (comma separated)
+          Media-Info = "timeout" or ""
+          Acct-Delay-Time = post dial delay (seconds from INVITE to 1st media packet)
+        
+        
+        Database accounting
+        -------------------
+        
+        The database backend logs all the information related to the media streams that
+        were created/closed during the whole session. This information is stored as a
+        JSON encoded string in a BLOB column in the database, along with the call_id,
+        from_tag and to_tag columns that can be used to retrieve the media information
+        for a given call. The database table and column names are fully configurable
+        in the database section of the configuration file.
+        
+        The table used to store these records, is automatically created by the media
+        dispatcher on startup, if it's not present. For this to happen, the user that
+        is configured in the dburi option in the database section, must have the CREATE
+        and ALTER rights on the database specified in the same dburi. If this is not
+        possible, then the media dispatcher will log an error indicating why it could
+        not create the table and also output the table definition that can be used by
+        some human operator to manually create the table. However, the recommended
+        way is to grant the CREATE and ALTER privileges to the user in the dburi over
+        the database specified in the same dburi.
+        
+        The database module uses SQLObject to access the database, which means it can
+        work with a lot of databases, by simply changing the scheme in the dburi.
+        Currently the following databases are supported: mysql, postgres, sqlite,
+        firebird, maxdb, mssql and sybase.
+        
+        
+        Closing expired calls
+        ---------------------
+        
+        Starting with version 2.1.0, MediaProxy supports closing calls for which all
+        the media streams did timeout, but for which no BYE was received to close the
+        call in the standard way.
+        
+        This feature will only work, when the OpenSIPS mediaproxy module uses the
+        engage_media_proxy() command to start MediaProxy for a given call. In this
+        case the mediaproxy module uses the dialog module to keep track of the call
+        and can pass the dialog id to the media dispatcher. When a media session is
+        expired because all streams did timeout, but no closing request was received
+        from the proxy, the media dispatcher will use the dialog id that was received
+        from the mediaproxy module, to issue a dlg_end_dlg request into the OpenSIPS'
+        MI interface, instructing OpenSIPS to generate the BYEs for the call, closing
+        it in a clean way and generating the accounting records.
+        
+        To use this, the mi_datagram module must be loaded and configured to use a
+        UNIX filesystem socket which must also be configured into the OpenSIPS section
+        of the MediaProxy configuration as socket_path.
+        
+        This feature is not available when using the use_media_proxy/end_media_session
+        functions in the proxy configuration, because in that case there is no dialog
+        that is tracked by the proxy which could be terminated using dlg_end_dlg.
+        
+        
+        Management interface
+        --------------------
+        
+        The management interface will accept commands terminated by \r\n. It will
+        return the results of the command, one per line, terminated by an empty
+        line (also \r\n terminated).
+        
+        Currently two commands are supported:
+        
+        sessions : This will have the dispatcher query all of its connected relays
+                   for active sessions. For every sessions it finds it will return
+                   one line with a JSON encoded dictionary containing session
+                   information.
+        
+        summary  : This will have the dispatcher present a summary of each of its
+                   connected relays. The results are returned as a JSON encoded
+                   dictionary, one line per relay.
+        
+        
+        Free support
+        ------------
+        
+        MediaProxy is developed and supported by AG Projects. AG Projects offers
+        best-effort free support for MediaProxy. "best-effort" means that we try to
+        solve the bugs you report or help fix your problems as soon as we can,
+        subject to available resources.
+        
+        You may report bugs or feature request to:
+        
+        users@lists.opensips.org
+        
+        A mailing list archive is available at:
+        http://lists.opensips.org/cgi-bin/mailman/listinfo/users
+        
+        
+        Commercial support
+        ------------------
+        
+        Commercial support options are available by purchasing:
+        
+        1. Multimedia Service Platform: http://ag-projects.com/Products or
+        2. MediaProxy and support: https://secure.dns-hosting.info/buyer_guide.phtml
+        
+        
+Platform: Linux
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Service Providers
+Classifier: License :: GNU General Public License (GPL)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: C

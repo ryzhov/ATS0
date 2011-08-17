@@ -1,0 +1,9 @@
+
+        Alias /mediasessions /usr/share/mediaproxy/web
+        <Directory "/usr/share/mediaproxy/web">
+                AllowOverride None
+                Options None
+                DirectoryIndex media_sessions.phtml
+                Order allow,deny
+                Allow from all
+        </Directory>
