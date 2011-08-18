@@ -49,12 +49,11 @@ sub auth_vokr {
 sub authorize {
     my $m = shift;
     my $auth = $m->getHeader("Authorization");
+    my $contact = $m->getHeader("Contact");
     my $authType;
     my $res = 'ok';
     my %params;
 
-    log(L_INFO, "authorize::".$m->getMethod());
-    
     
     if (defined($auth)) {
 
@@ -63,22 +62,26 @@ sub authorize {
 	    %params = map { if (/^(\w+)="?([^"]+)"?$/) {($1,$2)} } split /,\s*/, $2;
 	}
 	
-	log(L_INFO,"authType[$authType]");
-
 	my ($str,$key);
 	foreach $key (sort keys %params) {
 	    $str .= "$key($params{$key}) ";
 	}
 	log(L_INFO,$str);
 
-	if ($authType eq 'Digest') {
-	    if ($params{'username'} && $params{'response'}) {
-		my $req = '{"user_id":"'.$params{'username'}.'","auth_key":"'.$params{'response'}.'"}';
+	if ($contact =~ /.*vokrug_token=([^;]*)/) {
+	    my $auth_key = $1;
+	    if ($params{'username'} && $auth_key) {
+		my $req = '{"user_id":"'.$params{'username'}.'","auth_key":"'.$auth_key.'"}';
 		my %rsp = &auth_vokr($req);
 		log(L_INFO,"$req -> $rsp{'status'}:$rsp{'msg'}");
+		#$res = 'fail' if ($rsp{'msg'} =~ /^{"result":0}$/);
 	    } else {
 		log(L_INFO,"unsufisient credentials");
+		$res = 'digest';
 	    }
+
+	} else {
+	    #$res = 'digest';
 	}
 
 
@@ -87,7 +90,7 @@ sub authorize {
 
     }
     
-    log(L_INFO, "authorize::res=".$res);
+    log(L_INFO, "res=".$res);
     OpenSIPS::AVP::add('auth', $res);
     return 1;
 }#authorize
