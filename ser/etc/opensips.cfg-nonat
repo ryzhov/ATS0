@@ -1,0 +1,156 @@
+
+####### Global Parameters #########
+
+debug=3
+log_stderror=no
+log_facility=LOG_LOCAL0
+
+fork=yes
+children=4
+
+#debug=6
+#fork=no
+#log_stderror=yes
+
+disable_tcp=yes
+auto_aliases=no
+port=5060
+
+####### Modules Section ########
+
+#set module path
+mpath="/usr/local/lib64/opensips/modules/"
+
+loadmodule "db_mysql.so"
+loadmodule "signaling.so"
+loadmodule "sl.so"
+loadmodule "tm.so"
+
+loadmodule "rr.so"
+modparam("rr", "append_fromtag", 0)
+
+loadmodule "maxfwd.so"
+
+loadmodule "usrloc.so"
+modparam("usrloc", "db_mode",   2)
+modparam("usrloc", "db_url", "mysql://opensips:pass4sips@localhost/opensips")
+modparam("usrloc", "nat_bflag", 6)
+
+loadmodule "registrar.so"
+modparam("registrar", "max_contacts", 10)
+modparam("registrar", "default_expires", 320)
+modparam("registrar", "min_expires", 120)
+modparam("registrar", "max_expires", 920)
+modparam("registrar", "received_avp", "$avp(rcv)")
+#modparam("registrar", "nat_flag", 6)
+
+loadmodule "textops.so"
+loadmodule "mi_fifo.so"
+
+loadmodule "uri.so"
+modparam("uri", "use_uri_table", 0)
+
+loadmodule "auth.so"
+loadmodule "auth_db.so"
+modparam("auth_db", "db_url", "mysql://opensips:pass4sips@localhost/opensips")
+
+#loadmodule "alias_db.so"
+#modparam("alias_db","db_url","mysql://opensips:pass4sips@localhost/opensips")
+
+loadmodule "domain.so"
+modparam("domain", "db_url", "mysql://opensips:pass4sips@localhost/opensips")
+modparam("domain", "db_mode", 1)   # Use caching
+
+# -- include Perl support --
+loadmodule "perl.so"
+modparam("perl", "filename", "/usr/local/etc/opensips/perlfunctions.pl")
+modparam("perl", "modpath", "/usr/local/lib64/opensips/perl") 
+
+loadmodule "avpops.so"
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+modparam("alias_db|auth_db|usrloc|uri", "use_domain", 1)
+
+loadmodule "nathelper.so"
+modparam("nathelper", "natping_interval", 0)
+modparam("nathelper", "received_avp", "$avp(rcv)")
+
+loadmodule "mediaproxy.so"
+modparam("mediaproxy","mediaproxy_socket", "/var/run/mediaproxy.sock")
+
+####### Routing Logic ########
+route {
+	if (!mf_process_maxfwd_header("10")) {
+	    sl_send_reply("483","Too Many Hops");
+	    exit;
+	}
+
+	if (msg:len >= 2048 ) {
+	    sl_send_reply("513", "Message Too Large");
+	    exit;
+	}
+
+
+	if (!is_uri_host_local()) {
+	    if (method=="REGISTER") {
+		sl_send_reply("404", "Domain Not Found");
+	    } else {
+		sl_send_reply("403", "Forbidden");
+	    }
+	    exit;
+	} else {
+	    if (method=="REGISTER") {
+		sl_send_reply("100", "Trying");
+
+		perl_exec("authorize");
+		if(avp_check("$avp(auth)","eq/ok/g")) {
+		    xlog("L_INFO", "-- REGISTER:: save location --");
+		    if (nat_uac_test("7")) {
+			setbflag(6);
+			fix_nated_register();
+			force_rport();
+		    }
+		    save("location");
+		} else {
+		    xlog("L_INFO", "-- REGISTER:: reply unauth --");
+		    www_challenge("", "0");
+		}
+		exit;
+	    } else {
+		if (loose_route()) {
+		    append_hf("P-hint: rr-enforced\r\n");
+		    route(1);
+		}
+
+		if (nat_uac_test("19")) {
+		    record_route(";nat=yes");
+		} else {
+		    record_route();
+		}
+		
+		if (!lookup("location")) {
+		    sl_send_reply("404", "Not Found");
+		    exit;
+		}
+		
+		append_hf("P-hint: usrloc applied\r\n");
+	    }
+	}
+
+	route(1);
+}
+
+route[1] {
+    xlog("L_INFO", "-- route Block enter --");
+    t_on_reply("1");
+    t_on_failure("1");
+    if (!t_relay()) {
+	sl_reply_error();
+    };
+    exit;
+}
+onreply_route[1] {
+    append_hf("P-hint: onreply_route[1]\r\n");
+}
+failure_route[1] {
+    append_hf("P-hint: failure_route[1]\r\n");
+}
