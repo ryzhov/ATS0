@@ -1,2 +1,5 @@
 sudo setsebool -P httpd_can_network_connect 1
 
+find /usr/share/zoneinfo/ -type f | xargs md5sum | grep c79354b8dbee09e62bbc3fb544853283
+
+tcpdump -r /var/log/sip-trace-demo.log -v -nn -s0 -tttt udp port 5060 > tmp.sip

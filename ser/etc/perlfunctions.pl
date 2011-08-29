@@ -90,7 +90,7 @@ sub authorize {
 
     }
     
-    log(L_INFO, "res=".$res);
+    #log(L_INFO, "res=".$res);
     OpenSIPS::AVP::add('auth', $res);
     return 1;
 }#authorize
