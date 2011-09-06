@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['ATS0'] . '/config.php';
 require_once $_SERVER['ATS0'] . '/classes/User.php';
+require_once $_SERVER['ATS0'] . '/classes/Date.php';
 
 class Session implements ArrayAccess {
     private static $instance = null;
@@ -18,8 +19,11 @@ class Session implements ArrayAccess {
 
 	if (!isset($_SESSION['start_ts'])) {
 
+	    $ts = new Date();
+
 	    # -- Initialize new Session -- 
-	    $_SESSION['start_ts'] = time();
+	    $_SESSION['start_ts'] = $ts->getTs();
+	    $_SESSION['start_ts_str'] = $ts->getDate();
 	    $_SESSION['auth_state'] = 'guest';
 	    $_SESSION['user_id'] = GUEST_USER_ID; 
 	}
@@ -55,10 +59,14 @@ class Session implements ArrayAccess {
 	# Start Session
 	session_start();
 
+	$ts = new Date();
+
 	# Initialize session 
-	$_SESSION['start_ts'] = time();
+	$_SESSION['start_ts'] = $ts->getTs();
+	$_SESSION['start_ts_str'] = $ts->getDate();
 	$_SESSION['auth_state'] = 'user';
 	$_SESSION['user_id'] = $row['id'];
+	$_SESSION['login_key'] = $login_key;
 
 	# Destroy old User object
 	$this->user->__destruct();

@@ -59,7 +59,9 @@ case 'login':
 	    throw new Exception('Incorrect user/password.');
 
 	$ss->startUserSession($row);
-	$message = 'User successfully logged in.';
+	$message  = 'user_id [' . $_SESSION['user_id'];
+        $message .= '] successfully logged in at [' . $_SESSION['start_ts_str']; 
+	$message .= '] login_key [' . $_SESSION['login_key'] . ']';
 
 
     } catch (Exception $ex) {
