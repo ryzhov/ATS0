@@ -1,0 +1,48 @@
+running install
+running build
+running build_py
+running build_ext
+running build_scripts
+running install_lib
+creating /usr/lib64/python2.6/site-packages/mediaproxy
+creating /usr/lib64/python2.6/site-packages/mediaproxy/interfaces
+creating /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/accounting
+copying build/lib.linux-x86_64-2.6/mediaproxy/interfaces/accounting/database.py -> /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/accounting
+copying build/lib.linux-x86_64-2.6/mediaproxy/interfaces/accounting/__init__.py -> /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/accounting
+copying build/lib.linux-x86_64-2.6/mediaproxy/interfaces/accounting/radius.py -> /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/accounting
+copying build/lib.linux-x86_64-2.6/mediaproxy/interfaces/opensips.py -> /usr/lib64/python2.6/site-packages/mediaproxy/interfaces
+copying build/lib.linux-x86_64-2.6/mediaproxy/interfaces/__init__.py -> /usr/lib64/python2.6/site-packages/mediaproxy/interfaces
+creating /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/system
+copying build/lib.linux-x86_64-2.6/mediaproxy/interfaces/system/__init__.py -> /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/system
+copying build/lib.linux-x86_64-2.6/mediaproxy/interfaces/system/_conntrack.so -> /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/system
+copying build/lib.linux-x86_64-2.6/mediaproxy/relay.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+copying build/lib.linux-x86_64-2.6/mediaproxy/scheduler.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+copying build/lib.linux-x86_64-2.6/mediaproxy/mediacontrol.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+copying build/lib.linux-x86_64-2.6/mediaproxy/dispatcher.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+copying build/lib.linux-x86_64-2.6/mediaproxy/headers.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+copying build/lib.linux-x86_64-2.6/mediaproxy/__init__.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+copying build/lib.linux-x86_64-2.6/mediaproxy/iputils.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+copying build/lib.linux-x86_64-2.6/mediaproxy/sipthor.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+copying build/lib.linux-x86_64-2.6/mediaproxy/tls.py -> /usr/lib64/python2.6/site-packages/mediaproxy
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/accounting/database.py to database.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/accounting/__init__.py to __init__.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/accounting/radius.py to radius.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/opensips.py to opensips.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/__init__.py to __init__.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/interfaces/system/__init__.py to __init__.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/relay.py to relay.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/scheduler.py to scheduler.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/mediacontrol.py to mediacontrol.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/dispatcher.py to dispatcher.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/headers.py to headers.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/__init__.py to __init__.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/iputils.py to iputils.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/sipthor.py to sipthor.pyc
+byte-compiling /usr/lib64/python2.6/site-packages/mediaproxy/tls.py to tls.pyc
+running install_scripts
+copying build/scripts-2.6/media-relay -> /usr/bin
+copying build/scripts-2.6/media-dispatcher -> /usr/bin
+changing mode of /usr/bin/media-relay to 755
+changing mode of /usr/bin/media-dispatcher to 755
+running install_egg_info
+Writing /usr/lib64/python2.6/site-packages/mediaproxy-2.5.1-py2.6.egg-info

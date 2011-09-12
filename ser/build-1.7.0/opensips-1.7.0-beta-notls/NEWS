@@ -1,0 +1,119 @@
+What is new in 1.7.0
+
+2.1  Core
+
+	* Event Interface - a new interface that allows external applications to subscribe and receive notifications from OpenSIPS regarding various internal events full description
+	* SIP wise URI matching - SIP URI comparison as per RFC3261 (including URI parameters matching). This is used now in Record-Route, Dialog, UAC_Registrar module
+	* benchmarking and reporting for blocking I/O operations - SIP msg processing, DNS queries and DB mysql queries can be timed, and if any of these operations exceed a given threshold, warnings messages will be triggered to the logging facility. Also, new statistics are available, that show the load on the children of each UDP interfaces, as well as the tcp load
+	* auto increase of TCP send buffers at statup , in order to avoid blocking on TCP send operations because of buffering on socket
+	* extensive TCP debugging to troubleshoot the TCP blocking
+	* global configurable default DB URL - a default DB URL (to be used by all modules if not a per-module one given) can be configured as global parameter - see
+	* buffering for DB INSERT operations - Instead of flushing inserts row by row to DB, wait for query_buffer_size rows to pile up, and only then flush to DB. Also, a timer will run every query_flush_time seconds, ensuring that no rows will remain in memory for a long time. This feature is integrated with acc, siptrace and avpops, and also with the usrloc and dialog timer that do write-back synchronization with the DB.
+	* AVP auto-aliasing for names - there are no numerical or string names for AVPs - in script all are strings and, at startup, all AVP names are automatically aliased to numerical ID for speedup.
+	* control TCP over NAT via tcp_no_tcp_conn_bflag parameter - script can instruct TCP layer not to open a new TCP connection when trying to deliver the requests (but only to use an existing one) - useful in NAT situations. New core param "tcp_no_tcp_conn_bflag" - index of branch flag to mark the branch that should not attempt to open a new TCP conn.
+	* OpenSIPS return code covers also the children processes - at startup, OpenSIPS waits for all children processes to initialize before reporting a successful or failed startup.
+	* new {via.*} transformation for extracting information form a SIP VIA-like string.
+	* new {param.exist,name} transformation for testing the presence of a parameter (by name) in a list of SIP parameters. This is useful for testing params that don't have values (e.g., lr,ob).
+	* new remove_branch(n) function for removing an existing branch.
+	* new get_timestamp(sec_avp,usec_avp) function - to return the current timestamp, seconds and microseconds of the current second, from a single system call.
+	* new variable $hdrcnt(name) to count the instances of a SIP header in the current message.
+	* new variables $auth.nonce, $auth.opaque, $auth.alg, $auth.qop, $auth.nc - provides access to fields from the authentication headers.
+
+
+2.2  SIP Parser
+
+	* Call-Info header parsers
+	* WWW-Authenticate and Proxy-Authenticate header parser
+	* SIP URI parser extended to parse also the unknown URI parameters
+	* SIP URI parser extended - new helper function for splitting URI headers && support for parsing "Replaces" header body
+
+
+2.3  Tools
+
+	* OPENSIPSCTL and OSIPSCONSOLE uses a single database user (with read/write permissions) for DB access (the opensipsro access user - for Read-Only ops - was dropped)
+
+
+2.4  New EVENT_DATAGRAM module
+
+	* This module is a connector module for the Event Interface - it provides datagram based (UDP and UNIX sockets) communication with the external applications.
+	* Full module description and documentation
+
+
+2.5  New RTPPROXY module
+
+	* This module was split from NATHELPER module and encapsulate all the rtpproxy-related functionalities.
+	* Also comes with a set of improvements
+	* rtproxy failover - modules properly handles the errors reported by rtpproxy and it is able now to failover to another rtpproxy in cases like rtpproxy cannot create new streams, internal errors, etc
+	* improved the algorithm for re-distributing calls assigned to a failed RTPProxy
+	* "auto-bridging" mode - force the module to detect and trigger the RTP bridging cases.
+	* Full module description and documentation
+
+
+2.6  New UAC_REGISTRANT module
+
+	* This module that allows OpenSIPS to register itself on a remote registrar, including the authentication part.
+	* Full module description and documentation
+
+
+2.7  New UAC_AUTH module
+
+	* This module provides a common API for UAC authentication functionality. This module is not to be used directly from script, but it is used by other modules which requires UAC uath, like UAC, B2BUA, UAC_REGISTRANT modules.
+	* Full module description and documentation
+
+
+2.8  B2BUA modules
+
+	* internal API that allows other module to bind, control and implement custom B2B2UA scenarios
+	* parallel forking support on the UAC side of B2BUA
+	* outbound proxy for B2BUA - setting $du before calling b2b_init_request will have effect now
+	* UAS side callid can propagate to UAS side as an extra custom header - you can enable this feature by setting the init_callid_hdr parameter with the name of the header
+	* extended the db storage modes - now all the 3 types are supported: WRITE BACK(the existing one), WRITE THROUGH(new - synchonous storage in db) and NO DB.
+	*apply body lumps before processing (for initial Invites on which b2b_init_request was called, and for sequential requests received by b2b with a body)
+	* support for UAC authentication - the list of credentials is provided by the uac_auth module which must be loaded before b2b_entities module
+	* REFER with REPLACE hdr handling - the information on the dialog referred by REPLACE header is properly updated when going through B2BUA
+
+
+2.9  CFGUTILS module
+
+	* new ts_usec_delta(t1_sec, t1_usec, t2_sec, t2_usec, delta) function - returns the difference between two timestamps given as seconds and microseconds.
+
+
+2.10  DIALOG module
+
+	* state machine accepts requests while in early ( if not BYE )
+	* in-dialog pinging - optionally,create_dialog() also receives a string parameter, which specifies whether the dialog end-points should be pinged via SIP options messages. The parameter can be "P" to specify to only ping the caller, "c" to only ping the callee or "Pp" to ping both dialog sides. If one end-point fails to respond to a options ping in ping_interval ( configurable parameter ) seconds, OpenSIPS will terminate the dialog from the middle.
+	* proper cseq handling at invite time & proper validation of ACK messages
+	* new match_dialog() script function for explicitly doing dialog matching or for coping with sequential requests with no Route hdr.
+	* FROM/TO URIs per leg - in case of uac_replace_* function usage, in-dialog requests generated by OpenSIPS from the middle will have correct FROM and/or TO uris
+	* topology hiding functionality based on dialog state. It is a lightweight topology hiding built as an extension of dialog module. It does not change the dialog elements (to tag, from tag, callid), but only strips and restores the headers that contain topology information (Via, Record-Route, Route and Contact headers).
+
+
+2.11  DISPATCHER module
+
+	*limit the number of destinations to be tried when dispatcher call. The default entry is not counted into the total. See the max_results param for ds_select_dst() and ds_select_domain() functions
+
+
+2.12  EXEC module
+
+	* asynchronous support for exec_cmd() function - if the external app you are triggering does not have to provide output back to OpenSIPS, you can instruct OpenSIPS not to wait for the command to finish, but the continue right after the external command was launched.
+
+
+2.13  PRESENCE module
+
+	* performance improvements - use the info stored in memory to check if a Publish entry exists, instead of hitting the DB.
+
+
+2.14  PUA_DIALOGINFO module
+
+	* aggregation for multiple dialogs in the same line
+
+
+2.15  REGISTRAR module
+
+	* is_other_contact(domain , IPs) function - verifies if there are any other contacts besides the ones given in the IPs list
+
+
+2.16  TM module
+
+	* fixed race condition between CANCELing branches and creating new ones - on timeout, first CANCEL first the branch and only then generate a new branch (serial forking on timeout). Previous approach (first generate new branch and then CANCEL previous branch) was leading to unpredictable SIP behaviors, especially when the target of both branches is same SIP entity.
+	* accurate retransmissions and timeouts - enabling "own_timer_proc" parameter, TM may create its own timer process - Under heavy load, the presence cleanup routes and the register cleanup routines can take several minutes each. During this time, the tm timers, and in particular the retransmission timers don't run. Given that the first retransmission timer is 0.5sec, even very small delays caused by the cleanup routines can kill the retransmissions.

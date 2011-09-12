@@ -1,0 +1,343 @@
+mediaproxy (2.5.1) unstable; urgency=low
+
+  * Fixed linking with iptc library
+
+ -- Saul Ibarra <saul@ag-projects.com>  Wed, 22 Jun 2011 13:27:36 +0200
+
+mediaproxy (2.5.0) unstable; urgency=low
+
+  * Adapted to changes in python-application
+  * Fixed several pyflakes warnings
+  * Fixed encoding media information
+  * Adapted to changes in libipt and netfilter APIs
+  * Bumped Debian standards version to 3.9.2
+  * Reworked Debian packaging
+  * Added more user agent images taken from CDRTool
+  * Added specific iptables version dependency
+
+ -- Saul Ibarra <saul@ag-projects.com>  Thu, 16 Jun 2011 17:16:05 +0200
+
+mediaproxy (2.4.4) unstable; urgency=low
+
+  * Fixed ForwardingRule deallocation
+  * Bumped Debian Standards-Version to 3.9.1
+  * Fixed deprecation warning
+
+ -- Saul Ibarra <saul@ag-projects.com>  Mon, 08 Nov 2010 15:19:27 +0100
+
+mediaproxy (2.4.3) unstable; urgency=low
+
+  * Added support for pyrad version 1.2
+  * Don't create a media session in the relay if the SIP request and response
+    do not contain SDP with media streams
+  * Added mediaproxy-common-dbg package to allow debugging in case of software
+    crash
+
+ -- Saul Ibarra <saul@ag-projects.com>  Thu, 15 Jul 2010 14:08:36 +0200
+
+mediaproxy (2.4.2) unstable; urgency=low
+
+  * Prevent streams from being closed when a broken in-dialog
+    request is received
+
+ -- Saul Ibarra <saul@ag-projects.com>  Tue, 09 Mar 2010 11:20:17 +0100
+
+mediaproxy (2.4.1) unstable; urgency=low
+
+  * Update the session information if 200 OK was received without SDP 
+
+ -- Saul Ibarra <saul@ag-projects.com>  Thu, 25 Feb 2010 11:07:19 +0100
+
+mediaproxy (2.4.0) unstable; urgency=low
+
+  * Added ICE negotiation capability and assert itself as a TURN relay
+    candidate in the SDP, for a complete description and usage information
+    see http://mediaproxy-ng.org/wiki/ICE
+  * Fix race in which an already called event tried to be cancelled
+  * Prevent other acounting backends to be affected by a failure in one of
+    them
+
+ -- Saul Ibarra <saul@ag-projects.com>  Tue, 23 Feb 2010 18:36:53 +0100
+
+mediaproxy (2.3.10) unstable; urgency=low
+
+  * Fixed issue with core file regexp on OS X
+  * End dialog if session is no longer on any relay
+  * Expire all sessions before disconnecting from dispatchers
+  * Don't install signal handlers when running the relay reactor
+
+ -- Dan Pascu <dan@ag-projects.com>  Mon, 16 Nov 2009 16:41:08 +0200
+
+mediaproxy (2.3.9) unstable; urgency=low
+
+  * Build against the newer libnetfiler-conntrack3
+
+ -- Dan Pascu <dan@ag-projects.com>  Mon, 12 Oct 2009 15:43:21 +0200
+
+mediaproxy (2.3.8) unstable; urgency=low
+
+  * Removed wrong quotes around option in config.ini.sample
+  * Improved error message to make it easier to spot problems
+  * Fixed handling of old remote stream address when undefined
+  * Fixed building debian architecture dependent packages only
+
+ -- Dan Pascu <dan@ag-projects.com>  Wed, 09 Sep 2009 20:39:44 +0300
+
+mediaproxy (2.3.7) unstable; urgency=low
+
+  * Fixed typo in debian changelog
+  * Improved some error messages
+  * Do not try to send media to port 0 in tests
+  * Fixed handling of streams that are disabled when their port is set to 0
+  * Added 2 more tests for sessions with disabled streams
+  * Automatically restore the media_sessions table if gone during runtime
+  * Allow the to_tag field in the media_sessions table to be NULL
+  * Fixed issue in radius accounting when to_tag is None
+
+ -- Dan Pascu <dan@ag-projects.com>  Fri, 04 Sep 2009 13:50:38 +0300
+
+mediaproxy (2.3.6) unstable; urgency=low
+
+  * Consider offered streams with a port of 0 to be removed
+  * Don't remove hold timeout when the conntrack rule expires while on hold
+  * Added synthetic test for on_hold_timeout (holdtest3.py)
+  * Use learnt remote IP when ssending packets through userspace if possible
+  * Adapted code to the latest API changes in python-application 1.1.5
+  * Removed old and now redundant test for the twisted version from relay.py
+  * Refactored some datatypes from validators to actual types
+  * Modified SIPThorDomain data validator to accept everything it generates
+  * Allow the dispatcher list in the config file to be comma separated as well
+  * Updated minimum version dependency for python-application
+  * Fix for send_packet_count attribute not being set
+
+ -- Dan Pascu <dan@ag-projects.com>  Thu, 30 Jul 2009 17:06:51 +0300
+
+mediaproxy (2.3.5) unstable; urgency=low
+
+  * Replaced startSyslog with start_syslog to match latest python-application
+  * Improved detection for linux platforms to include non intel architectures
+  * Handle exhausted ports gracefully at relay
+  * Use start_time instead of to_tag to determine if accounting should be
+    performed and the dialog ended in OpenSIPS for an expired session, as
+    start_time only gets set if the relay saw SDP from both endpoints
+  * Fixed test to allow the relay to run on linux on non-intel architectures
+  * Only include used stream types in RADIUS Sip-Applications field
+  * Replaced reference to LGPL with GPL in debian/copyright
+  * Added ${misc:Depends} to debian/control to fix lintian warnings
+  * Removed var/run/mediaproxy from debian/*.dirs to fix lintian errors
+  * Added __repr__ method to PortRange class
+  * Adapted code to work with python-application-1.1.2 or newer
+  * Added package dependency checks for the minimum required versions
+  * Updated minimum dependency requirements in debian/control and INSTALL
+  * Bumped debian standards version to 3.8.2
+
+ -- Dan Pascu <dan@ag-projects.com>  Mon, 20 Jul 2009 16:39:26 +0300
+
+mediaproxy (2.3.4) unstable; urgency=low
+
+  * Fixed building binary only architecture dependent debian packages
+  * Fixed lintian warning about reference to versionless license file
+  * Fixed spelling in tls/README
+
+ -- Dan Pascu <dan@ag-projects.com>  Fri, 10 Apr 2009 12:03:42 +0300
+
+mediaproxy (2.3.3) unstable; urgency=low
+
+  * Re-raise the exception on failing to read RADIUS config file so we get a
+    full traceback
+  * Have dispatcher close TLS connection cleanly when relay has duplicate IP
+  * Added log_level to both Relay and Dispatcher configuration sections
+  * Improved reconnection behaviour in relay to dispatcher
+    When the connection from the relay to the dispatcher is lost, first retry
+    in 1 second, then retry in 10 second on subsequent attempts if it loses
+    the connection again.
+  * Fix bug where relay connects needlessly to previously removed dispatcher
+  * Implemented a keepalive mechanism from relay to dispatcher
+  * On relay reconnect don't have dispatcher query expired sessions
+  * Removed superfluous datatype declaration
+  * Only allow positive integers for time intervals and delays
+  * Updated version dependency for python-application
+  * In dispatcher, replace old connection from relay with new one instead of
+    giving an error
+  * In the dispatcher, check if the reported expired session belongs to the
+    relay that reported it
+  * Improved log messages when a relay reconnects to the dispatcher
+  * In dispatcher, break the connection to a relay if a request times out
+  * In dispatcher check if we know about the session that expired at relay
+  * Use a more robust strategy to disconnect an unresponsive relay
+
+ -- Dan Pascu <dan@ag-projects.com>  Wed, 08 Apr 2009 11:48:12 +0300
+
+mediaproxy (2.3.2) unstable; urgency=low
+
+  * Improved exception handling for DNS SRV lookups
+  * Fixed exception caused by removing the dispatcher twice on shutdown
+  * Fixed bug with preferred relay being considered last instead of first
+
+ -- Dan Pascu <dan@ag-projects.com>  Fri, 16 Jan 2009 12:51:08 +0200
+
+mediaproxy (2.3.1) unstable; urgency=low
+
+  * Changed info column in media_sessions to mediumblob to avoid truncation
+  * Added missing minimum version dependencies in the debian control file
+  * Fixed reconnect logic between relay and dispacther to handle the case
+    when a dispatcher is removed while the connection to it has failed
+  * Handle exception caused by a race condition when accessing counters from
+    a ForwardingRule that has expired but has not yet been acknowledged
+
+ -- Dan Pascu <dan@ag-projects.com>  Sat, 20 Dec 2008 03:51:27 +0200
+
+mediaproxy (2.3.0) unstable; urgency=low
+
+  * Fixed bug that prevented the dispatcher from trying the next relay in
+    the list, when a relay was unavailable or unusable
+  * Read acctport from the radius config file to an integer not to a string
+  * Fixed a bug that prevented a call on hold to be resumed in certain cases
+  * Don't close the media session when on hold and the contrack rule expires
+  * Enhanced graceful shutdown logic and made it reliable:
+    - keep all dispatcher connections active until all sessions are gone
+    - continue to update the list of active dispatchers
+  * Changed function signatures to simplify access to the to_tag argument
+  * Never return 0.0.0.0 as the IP address to OpenSIPS
+  * Fixed a bug with incorrect session counting when errors happen while
+    creating a new session, which could result in connections with obsolete
+    dispatchers being kept open indefinitely
+  * Made web page display relay summaries even when there are no sessions
+  * Fixed web page to show correct stream counts when there are no sessions
+  * Added minimum version build dependendency for libnetfilter-conntrack-dev
+
+ -- Dan Pascu <dan@ag-projects.com>  Tue, 16 Dec 2008 19:35:15 +0200
+
+mediaproxy (2.2.3) unstable; urgency=low
+
+  * Publish software version as part of the network identity
+  * Added version command on the dispatcher management interface
+
+ -- Dan Pascu <dan@ag-projects.com>  Tue, 09 Dec 2008 19:19:47 +0200
+
+mediaproxy (2.2.2) unstable; urgency=low
+
+  * Added minimum pyrad version dependency
+
+ -- Dan Pascu <dan@ag-projects.com>  Tue, 09 Dec 2008 12:27:35 +0200
+
+mediaproxy (2.2.1) unstable; urgency=low
+
+  * Fixed logic to handle replies from relay to dispatcher on error cases
+
+ -- Dan Pascu <dan@ag-projects.com>  Tue, 09 Dec 2008 09:16:57 +0200
+
+mediaproxy (2.2.0) unstable; urgency=low
+
+  * Clarified debian installation example regarding the testing distribution
+  * Fixed wording and some typos in the documentation
+  * Fixed to_tag not being sent in some cases in synthetic tests
+  * Removed Inhibitor object and integrated its functionality into the init
+    method of ForwardingRule, to improve the session setup efficiency
+  * Changed the internal ForwardingRule linked list to a static array
+  * Improved the session setup efficiency by 2 orders of magnitude
+  * Removed start_time column from database accounting table
+  * Renamed pdd to post_dial_delay in media statistics
+  * Added management_passport option to the dispatcher
+  * Made getting statistics more efficient
+  * Added code to get all conntrack rule counters at once for efficiency
+  * Improved statistics gathering speed more than 2 times
+  * Removed redundant top level counters in stats
+  * Made speed measurement accurate regarding sessions closed between probes
+  * Use constant interval scheduler for better accuracy in speed measurement
+  * Return single line json blobs for summary and sessions
+  * Always add dialog_id to session statistics
+  * Fixed interaction between dispatcher and opensips for expired sessions
+
+ -- Dan Pascu <dan@ag-projects.com>  Sat, 06 Dec 2008 01:54:47 +0200
+
+mediaproxy (2.1.0) unstable; urgency=low
+
+  * Mention libnetfilter-conntrack in the installation requirements section
+  * Added note about using distribution provided kernel images
+  * Renamed OpenSER to OpenSIPs
+  * Do accounting only after a 200 OK response was received, which is
+    indicated by the presence of the to_tag that is not sent by OpenSIPS
+    for provisional replies, but only with the 200 OK
+  * Have synthetic test scripts look for the mediaproxy module in current and
+    parent directories automatically
+  * In the synthetic tests have OpenSIPS send the to tag only with 200 OK
+  * Added synthetic test script to test provisional responses from two
+    different PSTN gateways with varying to tags
+  * Enhanced kernel version parsing to support non-standard named kernels
+    (i.e. major.minor.revision.extra)
+  * Updated debian standards version
+  * Rephrased description in manual pages and debian control file
+  * Restructured and improved documentation to better describe how to install
+  * Improved dictionary parsing in RADIUS accounting module
+  * Update support section in readme
+  * Added management interface for OpenSIPS
+  * Fix for relay cleanup timer when dispatcher is restarted
+  * Modified dispatcher to store dialog_id for sessions and use the OpenSIPS
+    management interface to send BYEs when a session did timeout
+  * Added dialog_id value to test scripts
+  * Simplified parsing of headers received from OpenSIPs in dispatcher
+  * Fixed ExpireWatcher port comparison to be done as a 16-bit unsigned int
+  * Remove all matching iptables entries on Inhibitor dealloc in order to
+    remove stray entries that are leftover after crashes
+  * Added per-stream post-dial delay to the session statistics
+  * Record the post dial delay from the first stream into radius accounting
+  * Added note to INSTALL about official Debian repositories from AG Projects
+  * Added note to INSTALL about where to find the changelog
+  * Updated the feature list in README with the latest additions
+  * Fixed regression from 1.x that prevented chaining of mediaproxies
+  * Ignore invalid accounting module names in the configuration and log an
+    error about them instead of raising an exception
+  * Gracefully report the errors that occur while reading the radius
+    configuration file and then exit, instead of throwing an exception
+  * The radius configuration file may be relative to the config directory
+  * Do not cache database inserted rows to avoid the need to clean the cache
+    or otherwise have an ever increasing application memory footprint
+  * Capture and report database errors when inserting statistics records
+  * Use MyISAM for the media_sessions table
+  * Improved the database accounting speed about 3 times using raw queries
+  * Create the table for database accounting on startup if it doesn't exist
+  * Removed pool_size database option and use a single database connection
+  * Reworded the tls README a bit for clarity
+  * Added OpenSIPS section to the config.ini.sample
+  * Added documentation sections for accounting and closing expired calls
+  * Added minimum version dependency for libnetfilter-conntrack in INSTALL
+  * Encode applications and codecs from all streams, not only the first one,
+    in the radius accounting backend
+  * Log the post-dial delay in radius accounting as Acct-Delay-Time
+  * Capture and log radius exceptions
+
+ -- Dan Pascu <dan@ag-projects.com>  Fri, 12 Sep 2008 18:53:08 +0300
+
+mediaproxy (2.0.3) unstable; urgency=low
+
+  * Set resource limit for maximum open file descriptors to be able to handle
+    all streams permitted by the port_range setting.
+  * Allow media-dispatcher to use choose the best available reactor.
+  * Fixed issue with media-dispatcher not running on non-Linux platforms.
+  * Made the twisted framework epollreactor mandatory for the media-relay.
+  * Made the relay check if the twisted framework is at least version 2.5.0.
+
+ -- Dan Pascu <dan@ag-projects.com>  Mon, 23 Jun 2008 21:11:46 +0300
+
+mediaproxy (2.0.2) unstable; urgency=low
+
+  * Added relay_ip configuration option to media-relay.
+  * If relay_ip is not set and we cannot determine the default host IP
+    using the interface with the default route, report error and exit.
+
+ -- Dan Pascu <dan@ag-projects.com>  Thu, 05 Jun 2008 21:17:04 +0300
+
+mediaproxy (2.0.1) unstable; urgency=low
+
+  * Added python-twisted-names to the debian dependency list.
+  * Added libnetfilter-conntrack-dev to the debian build dependency list.
+
+ -- Dan Pascu <dan@ag-projects.com>  Sat, 31 May 2008 18:21:08 +0300
+
+mediaproxy (2.0.0) unstable; urgency=low
+
+  * Initial release.
+
+ -- Dan Pascu <dan@ag-projects.com>  Tue, 27 May 2008 18:43:43 +0300
+

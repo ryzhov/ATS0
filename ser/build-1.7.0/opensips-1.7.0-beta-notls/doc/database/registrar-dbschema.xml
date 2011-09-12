@@ -1,0 +1,350 @@
+<chapter>
+  <title>Registrar</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-aliases">aliases</link>
+        </term>
+        <listitem>
+        <para>This table for the registrar module is similar to the "location" table, (the aliases index makes lookup of missed calls much faster). Thus, the function lookup("alias") can be used to map aliases to AORs. More information is available at: http://www.opensips.org/html/docs/modules/1.5.xregistrar.html. Most people uses the dbaliases table with the alias_db module now.
+        </para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-aliases" frame="all">
+      <title>Table "aliases"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>username</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Alias Username / Phone Number </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>domain</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Domain name</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>contact</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Contact header field value provides a URI whoses meaning depends on the type of request or response it is in.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>received</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Received IP:PORT in the format SIP:IP:PORT</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>path</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Path Header(s) per RFC 3327</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>expires</varname>
+            </entry>
+            <entry>
+              <varname>datetime</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>'2020-05-28 21:32:15'</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Date and time when this entry expires.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>q</varname>
+            </entry>
+            <entry>
+              <varname>float</varname>
+            </entry>
+            <entry>
+              <constant>10,2</constant>
+            </entry>
+            <entry>1.0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Value used for preferential routing.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>'Default-Call-ID'</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Call-ID header field uniquely identifies a particular invitation or all registrations of a particular client.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>cseq</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>13</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>CSeq header field contains a single decimal sequence number and the request method.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>last_modified</varname>
+            </entry>
+            <entry>
+              <varname>datetime</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>'1900-01-01 00:00:01'</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Date and time when this entry was last modified.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>flags</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Flags</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>cflags</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>CFlags</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>user_agent</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>User-Agent header field contains information about the UAC originating the request.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>socket</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Socket used to connect to OpenSIPS. For example: UDP:IP:PORT</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>methods</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Flags that indicate the SIP Methods this contact will accept.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-aliases-index" frame="all">
+      <title>Table "aliases" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>alias_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>username, domain, contact</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

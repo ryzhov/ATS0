@@ -1,0 +1,89 @@
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.4//EN" "http://www.oasis-open.org/docbook/sgml/4.4/docbook.dtd"[
+  <!ENTITY acc-dbschema.xml SYSTEM "../../doc/database/acc-dbschema.xml">
+  <!ENTITY alias-db-dbschema.xml SYSTEM "../../doc/database/alias_db-dbschema.xml">
+  <!ENTITY auth-db-dbschema.xml SYSTEM "../../doc/database/auth_db-dbschema.xml">
+  <!ENTITY avpops-dbschema.xml SYSTEM "../../doc/database/avpops-dbschema.xml">
+  <!ENTITY b2b-dbschema.xml SYSTEM "../../doc/database/b2b-dbschema.xml">
+  <!ENTITY carrierroute-dbschema.xml SYSTEM "../../doc/database/carrierroute-dbschema.xml">
+  <!ENTITY closeddial-dbschema.xml SYSTEM "../../doc/database/closeddial-dbschema.xml">
+  <!ENTITY cpl-dbschema.xml SYSTEM "../../doc/database/cpl-dbschema.xml">
+  <!ENTITY dialog-dbschema.xml SYSTEM "../../doc/database/dialog-dbschema.xml">
+  <!ENTITY dialplan-dbschema.xml SYSTEM "../../doc/database/dialplan-dbschema.xml">
+  <!ENTITY dispatcher-dbschema.xml SYSTEM "../../doc/database/dispatcher-dbschema.xml">
+  <!ENTITY domain-dbschema.xml SYSTEM "../../doc/database/domain-dbschema.xml">
+  <!ENTITY domainpolicy-dbschema.xml SYSTEM "../../doc/database/domainpolicy-dbschema.xml">
+  <!ENTITY drouting-dbschema.xml SYSTEM "../../doc/database/drouting-dbschema.xml">
+  <!ENTITY extensions-dbschema.xml SYSTEM "../../doc/database/extensions-dbschema.xml">
+  <!ENTITY group-dbschema.xml SYSTEM "../../doc/database/group-dbschema.xml">
+  <!ENTITY imc-dbschema.xml SYSTEM "../../doc/database/imc-dbschema.xml">
+  <!ENTITY load-balancer-dbschema.xml SYSTEM "../../doc/database/load_balancer-dbschema.xml">
+  <!ENTITY msilo-dbschema.xml SYSTEM "../../doc/database/msilo-dbschema.xml">
+  <!ENTITY nathelper-dbschema.xml SYSTEM "../../doc/database/nathelper-dbschema.xml">
+  <!ENTITY pdt-dbschema.xml SYSTEM "../../doc/database/pdt-dbschema.xml">
+  <!ENTITY permissions-dbschema.xml SYSTEM "../../doc/database/permissions-dbschema.xml">
+  <!ENTITY presence-dbschema.xml SYSTEM "../../doc/database/presence-dbschema.xml">
+  <!ENTITY registrar-dbschema.xml SYSTEM "../../doc/database/registrar-dbschema.xml">
+  <!ENTITY rls-dbschema.xml SYSTEM "../../doc/database/rls-dbschema.xml">
+  <!ENTITY siptrace-dbschema.xml SYSTEM "../../doc/database/siptrace-dbschema.xml">
+  <!ENTITY speeddial-dbschema.xml SYSTEM "../../doc/database/speeddial-dbschema.xml">
+  <!ENTITY standard-dbschema.xml SYSTEM "../../doc/database/standard-dbschema.xml">
+  <!ENTITY uri-db-dbschema.xml SYSTEM "../../doc/database/uri_db-dbschema.xml">
+  <!ENTITY userblacklist-dbschema.xml SYSTEM "../../doc/database/userblacklist-dbschema.xml">
+  <!ENTITY usrloc-dbschema.xml SYSTEM "../../doc/database/usrloc-dbschema.xml">
+  <!ENTITY % docentities SYSTEM "../entities.xml"> %docentities;
+]>
+<book>
+<title>OpenSIPS database tables</title>
+<bookinfo>
+	<productname class="trade">&osips;</productname>
+	<authorgroup>
+		<author>
+			<firstname>&osips;</firstname>
+			<surname>Development Team</surname>
+			<affiliation><orgname>&osipshomelink;</orgname></affiliation>
+			<address>&osipsdevmail;</address>
+		</author>
+	</authorgroup>
+	<copyright>
+		<year>2007-2009</year>
+		<holder>OpenSIPS development Team</holder>
+	</copyright>
+	<revhistory>
+		<revision>
+			<revnumber>$Revision: 5894 $</revnumber>
+			<date>$Date: 2009-07-20 16:04:45 +0300 (Mon, 20 Jul 2009) $</date>
+		</revision>
+	</revhistory>
+</bookinfo>
+    &acc-dbschema.xml
+    &alias-db-dbschema.xml
+    &auth-db-dbschema.xml
+    &avpops-dbschema.xml
+    &b2b-dbschema.xml
+    &carrierroute-dbschema.xml
+    &closeddial-dbschema.xml
+    &cpl-dbschema.xml
+    &dialog-dbschema.xml
+    &dialplan-dbschema.xml
+    &dispatcher-dbschema.xml
+    &domain-dbschema.xml
+    &domainpolicy-dbschema.xml
+    &drouting-dbschema.xml
+    &extensions-dbschema.xml
+    &group-dbschema.xml
+    &imc-dbschema.xml
+    &load-balancer-dbschema.xml
+    &msilo-dbschema.xml
+    &nathelper-dbschema.xml
+    &pdt-dbschema.xml
+    &permissions-dbschema.xml
+    &presence-dbschema.xml
+    &registrar-dbschema.xml
+    &rls-dbschema.xml
+    &siptrace-dbschema.xml
+    &speeddial-dbschema.xml
+    &standard-dbschema.xml
+    &uri-db-dbschema.xml
+    &userblacklist-dbschema.xml
+    &usrloc-dbschema.xml
+</book>
