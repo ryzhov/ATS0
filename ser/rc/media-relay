@@ -1,0 +1,64 @@
+#! /bin/sh
+#
+### BEGIN INIT INFO
+# Provides:          mediaproxy-relay
+# Required-Start:    $syslog $network $local_fs $remote_fs $time
+# Required-Stop:     $syslog $network $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start the MediaProxy relay
+# Description:       Start the MediaProxy relay
+### END INIT INFO
+
+. /etc/rc.d/init.d/functions
+
+prog="media-relay"
+DESC="MediaProxy relay"
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/bin/media-relay
+PIDFILE=/var/run/mediaproxy/relay.pid
+OPTIONS=
+RETVAL=0
+
+start() {
+    echo -n $"Starting $prog: "
+    modprobe ip_tables
+    daemon $DAEMON $OPTIONS 2>/dev/null | tail -1
+    RETVAL=$?
+    echo
+    [ $RETVAL = 0 ] && touch /var/lock/subsys/$prog
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $DAEMON
+    RETVAL=$?
+    echo
+    [ $RETVAL = 0 ] && rm -f /var/lock/subsys/$prog /var/run/$prog.pid
+}
+
+case "$1" in
+  start)
+  	start
+	;;
+  stop)
+  	stop
+	;;
+  restart)
+  	stop
+	sleep 1
+	start
+	;;
+
+  status)
+  	status $DAEMON
+        RETVAL=$?
+        ;;
+  *)
+	echo "Usage: service $prog {start|stop|restart|status}"
+	exit 1
+	;;
+esac
+
+exit 0

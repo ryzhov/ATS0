@@ -1,0 +1,64 @@
+#!/bin/bash
+#
+### BEGIN INIT INFO
+# Provides:          mediaproxy-dispatcher
+# Required-Start:    $syslog $network $local_fs $remote_fs $time
+# Required-Stop:     $syslog $network $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start the MediaProxy dispatcher
+# Description:       Start the MediaProxy dispatcher
+### END INIT INFO
+
+. /etc/rc.d/init.d/functions
+
+
+prog="media-dispatcher"
+DESC="MediaProxy dispatcher"
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/bin/media-dispatcher
+PIDFILE=/var/run/mediaproxy/dispatcher.pid
+OPTIONS=
+RETVAL=0
+
+
+
+start() {
+	echo -n $"Starting $prog: "
+	daemon $DAEMON $OPTIONS 2>/dev/null | tail -1
+	RETVAL=$?
+        echo
+        [ $RETVAL = 0 ] && touch /var/lock/subsys/$prog
+}
+
+stop() {
+	echo -n $"Stopping $prog: "
+        killproc $DAEMON
+        RETVAL=$?
+        echo
+        [ $RETVAL = 0 ] && rm -f /var/lock/subsys/$prog /var/run/$prog.pid
+}
+
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  restart)
+	stop
+	start
+	;;
+  status)
+	status $DAEMON
+	RETVAL=$?
+	;;
+  *)
+	echo "Usage: service $prog {start|stop|restart|status}"
+	exit 1
+	;;
+esac
+
+exit 0
