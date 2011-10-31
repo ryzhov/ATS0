@@ -81,7 +81,7 @@ sub authorize {
 	    }
 
 	} else {
-	    #$res = 'digest';
+	    $res = 'digest';
 	}
 
 
