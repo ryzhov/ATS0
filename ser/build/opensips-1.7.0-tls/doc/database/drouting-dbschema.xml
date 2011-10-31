@@ -1,0 +1,593 @@
+<chapter>
+  <title>Dynamic Routing</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-dr-gateways">dr_gateways</link>
+        </term>
+        <listitem>
+		<para>This table is used by the Dynamic Routing module to store
+		information about the destinations/gateways where to route calls.
+		More information can be found at: http://www.opensips.org/html/docs/modules/1.5.xdrouting.html.
+		</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-dr-rules">dr_rules</link>
+        </term>
+        <listitem>
+		<para>This table is used by the Dynamic Routing module to store
+		information about the routing rules.
+		More information can be found at: http://www.opensips.org/html/docs/modules/1.5.xdrouting.html.
+		</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-dr-gw-lists">dr_gw_lists</link>
+        </term>
+        <listitem>
+		<para>This table is used by the Dynamic Routing module to define
+		lists of gateways to be used in rule definitions.
+		More information can be found at: http://www.opensips.org/html/docs/modules/1.5.xdrouting.html.
+		</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-dr-groups">dr_groups</link>
+        </term>
+        <listitem>
+		<para>This table is used by the Dynamic Routing module to store
+		information about the routing groups (users mapped over groups).
+		More information can be found at: http://www.opensips.org/html/docs/modules/1.5.xdrouting.html.
+		</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-dr-gateways" frame="all">
+      <title>Table "dr_gateways"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>gwid</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>GW unique ID - used to link the GW from 
+			the routing rules
+		</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>type</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Type/class of the GW (user defined)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>address</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>GW/destination address as name/IP[:port]</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>strip</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Number of digits to be striped out for the begining 
+			of the username when using this GW/destination</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>pri_prefix</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>16</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>String to prefix the username of RURI when using 
+			this GW/destination</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>attrs</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Generic string describing GW attributes - this string is
+			to be interpreted from the script</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>probe_mode</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>0- No probing; 1-Probe on disable only ; 2-Always probe;  </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>description</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Text description of the GW/destination</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-dr-rules" frame="all">
+      <title>Table "dr_rules"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>ruleid</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>Rule unique ID
+		</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>groupid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The ID(s) of the routing group(s) this rule is to be 
+		used for - comma separeted list of numerical Ids
+		</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>prefix</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Numerical prefix to match this rule</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>timerec</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Time recurrence used for matching this rule.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>priority</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Priority of this rule (among rules with same prefix 
+		and timerec).</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>routeid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Route block (from cfg script) to be called when rule 
+		matches.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>gwlist</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Reference to the GWs/destinations to be used when
+		rule matches.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>attrs</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Generic string describing RULE attributes - this string is
+			to be interpreted from the script</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>description</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Text description of the rule</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-dr-gw-lists" frame="all">
+      <title>Table "dr_gw_lists"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>Unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>gwlist</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Reference to the GWs/destinations from the list.
+		</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>description</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Text description of the GW list</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-dr-groups" frame="all">
+      <title>Table "dr_groups"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>Unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>username</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Username part of user</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>domain</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Domain part of user</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>groupid</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The ID of the routing group the user belongs to.
+		</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>description</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Text description of the group/user</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

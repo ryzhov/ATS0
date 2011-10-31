@@ -1,0 +1,290 @@
+<chapter>
+  <title>SIPtrace</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-sip-trace">sip_trace</link>
+        </term>
+        <listitem>
+        <para>This table is used to store incoming/outgoing SIP messages in database. More informations can be found in the siptrace module documentation at: http://www.opensips.org/html/docs/modules/1.5.xsiptrace.html.
+        </para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-sip-trace" frame="all">
+      <title>Table "sip_trace"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>time_stamp</varname>
+            </entry>
+            <entry>
+              <varname>datetime</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>'1900-01-01 00:00:01'</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Recording date</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>call ID from SIP message</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>traced_user</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>SIP URI of the user being traced</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>msg</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Full SIP message</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>method</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>32</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>SIP method name</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>status</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>SIP reply status</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>fromip</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>50</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Source IP address</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>toip</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>50</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Destination IP address</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>fromtag</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>From tag</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>direction</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>4</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Destination IP address</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-sip-trace-index" frame="all">
+      <title>Table "sip_trace" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>traced_user_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>traced_user</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>date_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>time_stamp</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>fromip_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>fromip</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callid_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>callid</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

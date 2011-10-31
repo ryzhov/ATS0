@@ -1,0 +1,116 @@
+<chapter>
+  <title>Domain</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-domain">domain</link>
+        </term>
+        <listitem>
+        <para>This table is used by the domain module to determine if a host part of a URI is "local" or not. More information about the domain module can be found at: http://www.opensips.org/html/docs/modules/1.5.xdomain.html
+        </para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-domain" frame="all">
+      <title>Table "domain"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>domain</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Domain name</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>last_modified</varname>
+            </entry>
+            <entry>
+              <varname>datetime</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>'1900-01-01 00:00:01'</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Date and time when this record was last modified.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-domain-index" frame="all">
+      <title>Table "domain" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>domain_idx</varname>
+            </entry>
+            <entry>unique</entry>
+            <entry>domain</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

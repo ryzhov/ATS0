@@ -1,0 +1,181 @@
+<chapter>
+  <title>Permissions</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-address">address</link>
+        </term>
+        <listitem>
+        <para>This table is used by the permissions module. More information is available at: http://www.opensips.org/html/docs/modules/1.5.xpermissions.html
+        </para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-address" frame="all">
+      <title>Table "address"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>grp</varname>
+            </entry>
+            <entry>
+              <varname>unsigned short</varname>
+            </entry>
+            <entry>
+              <constant>5</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Group</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>ip</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>50</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>IP address</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>mask</varname>
+            </entry>
+            <entry>
+              <varname>char</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>32</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Network mask</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>port</varname>
+            </entry>
+            <entry>
+              <varname>unsigned short</varname>
+            </entry>
+            <entry>
+              <constant>5</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Port</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>proto</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>4</constant>
+            </entry>
+            <entry>'any'</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Transport protocol is either "any" or equal to transport protocol of request. Possible values that can be stored are "any", "udp", "tcp", "tls", and "sctp".</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>pattern</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Regular expression</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>context_info</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>32</constant>
+            </entry>
+            <entry>NULL</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Extra context information</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

@@ -1,0 +1,180 @@
+<chapter>
+  <title>Domainpolicy</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-domainpolicy">domainpolicy</link>
+        </term>
+        <listitem>
+        <para>Table for the domainpolicy module. More information at http://www.opensips.org/html/docs/modules/1.5.xdomainpolicy.html.
+        </para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-domainpolicy" frame="all">
+      <title>Table "domainpolicy"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>rule</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Domain policy rule name which is equal to the URI as published in the domain policy NAPTRs.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>type</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para> Domain policy rule type. In the case of federation names, this is "fed". For standard referrals according to draft-lendl-speermint-technical-policy-00, this is "std". For direct domain lookups, this is "dom". Default value is "type".</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>att</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>It contains the AVP's name. If the rule stored in this row triggers, than dp_can_connect() will add an AVP with that name.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>val</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>It contains the values for AVPs created by dp_can_connect(). Default value is "val"</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>description</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>255</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Comment about the rule</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-domainpolicy-index" frame="all">
+      <title>Table "domainpolicy" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>rav_idx</varname>
+            </entry>
+            <entry>unique</entry>
+            <entry>rule, att, val</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>rule_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>rule</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

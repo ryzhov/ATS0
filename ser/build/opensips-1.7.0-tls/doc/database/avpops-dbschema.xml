@@ -1,0 +1,226 @@
+<chapter>
+  <title>AVP Operations</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-usr-preferences">usr_preferences</link>
+        </term>
+        <listitem>
+        <para>This table us used by the avpops module to implement Attribute Value Pairs (AVP's). More information about the avpops module can be found at: http://www.opensips.org/html/docs/modules/1.5.xavpops.html
+        </para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-usr-preferences" frame="all">
+      <title>Table "usr_preferences"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>Unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>uuid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Unique user ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>username</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Username / phone number</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>domain</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Domain name</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>attribute</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>32</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>AVP attribute</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>type</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>AVP type</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>value</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>AVP value</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>last_modified</varname>
+            </entry>
+            <entry>
+              <varname>datetime</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>'1900-01-01 00:00:01'</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Date and time when this record was last modified.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-usr-preferences-index" frame="all">
+      <title>Table "usr_preferences" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>ua_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>uuid, attribute</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>uda_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>username, domain, attribute</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>value_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>value</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

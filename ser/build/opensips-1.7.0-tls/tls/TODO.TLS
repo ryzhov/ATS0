@@ -1,0 +1,15 @@
+$Id: TODO.TLS 5891 2009-07-20 12:53:09Z bogdan_iancu $
+
+* Finish up the documentation
+	item date: 16 June 2005
+	
+* Commit test certificates to ease testing
+	item date: 16 June 2005
+
+* tls domains: allow more configurability and test the whole thing
+	item date: 16 June 2005
+
+Mantainer:
+cesc dot santa at gmail dot com
+
+

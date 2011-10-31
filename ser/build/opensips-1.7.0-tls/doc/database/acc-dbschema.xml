@@ -1,0 +1,456 @@
+<chapter>
+  <title>Accounting</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-acc">acc</link>
+        </term>
+        <listitem>
+		<para>This table is used by the ACC module to report on transactions - accounted calls. More information is available at: http://www.opensips.org/html/docs/modules/1.5.xacc.html
+		</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-missed-calls">missed_calls</link>
+        </term>
+        <listitem>
+        <para>This table is used by the ACC module for keeping track of missed calls. This table is similar to the 'acc' table. More information is available at: http://www.opensips.org/html/docs/modules/1.5.xacc.html</para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-acc" frame="all">
+      <title>Table "acc"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>method</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>16</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>A method is the primary function that a request is meant to invoke on a server.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>from_tag</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The tag parameter serves as a general mechanism to identify a dialog, which is the combination of the Call-ID along with two tags, one from participant in the dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>to_tag</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The tag parameter serves as a general mechanism to identify a dialog, which is the combination of the Call-ID along with two tags, one from participant in the dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Call-ID header field uniquely identifies a particular invitation or all registrations of a particular client. </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sip_code</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>3</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>SIP reply code</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sip_reason</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>32</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>SIP reply reason</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>time</varname>
+            </entry>
+            <entry>
+              <varname>datetime</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Date and time when this record was written.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>duration</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Call duration (from 200OK INVITE to BYE request) - this filed is populated only if CDR support is enabled in ACC module (see cdr_flag parameter)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>setuptime</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Call initialization duration - (from INVITE request to 200 OK INVITE) - this filed is populated only if CDR support is enabled in ACC module (see cdr_flag parameter)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>created</varname>
+            </entry>
+            <entry>
+              <varname>datetime</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The call creation date and time.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-acc-index" frame="all">
+      <title>Table "acc" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>callid_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>callid</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-missed-calls" frame="all">
+      <title>Table "missed_calls"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>method</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>16</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>A method is the primary function that a request is meant to invoke on a server.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>from_tag</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The tag parameter serves as a general mechanism to identify a dialog, which is the combination of the Call-ID along with two tags, one from participant in the dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>to_tag</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>The tag parameter serves as a general mechanism to identify a dialog, which is the combination of the Call-ID along with two tags, one from participant in the dialog.</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Call-ID header field uniquely identifies a particular invitation or all registrations of a particular client. </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sip_code</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>3</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>SIP reply code</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sip_reason</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>32</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>SIP reply reason</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>time</varname>
+            </entry>
+            <entry>
+              <varname>datetime</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Date and time when this record was written.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-missed-calls-index" frame="all">
+      <title>Table "missed_calls" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>callid_idx</varname>
+            </entry>
+            <entry>default</entry>
+            <entry>callid</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

@@ -1,0 +1,16 @@
+<!-- Module Developer's Guide -->
+
+<chapter>
+	<chapterinfo>
+	<revhistory>
+		<revision>
+		<revnumber>$Revision: 5895 $</revnumber>
+		<date>$Date: 2009-07-20 17:11:05 +0300 (Mon, 20 Jul 2009) $</date>
+		</revision>
+	</revhistory>
+	</chapterinfo>
+	<title>Developer's Guide</title>
+	<para>
+	The module does not provide any <acronym>API</acronym> to use in other &osips; modules.
+	</para>
+</chapter>

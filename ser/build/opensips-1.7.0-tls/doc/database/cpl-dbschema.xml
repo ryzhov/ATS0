@@ -1,0 +1,151 @@
+<chapter>
+  <title>Call-processing language</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-cpl">cpl</link>
+        </term>
+        <listitem>
+        <para>Table for the call processing language "cpl" module. More information is available at: http://www.opensips.org/html/docs/modules/1.5.xcpl-c.html</para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-cpl" frame="all">
+      <title>Table "cpl"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>Unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>username</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>domain</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>''</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>cpl_xml</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>cpl_bin</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-cpl-index" frame="all">
+      <title>Table "cpl" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>account_idx</varname>
+            </entry>
+            <entry>unique</entry>
+            <entry>username, domain</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>

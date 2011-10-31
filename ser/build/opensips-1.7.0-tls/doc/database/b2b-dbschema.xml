@@ -1,0 +1,1087 @@
+<chapter>
+  <title>B2BUA</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-b2b-entities">b2b_entities</link>
+        </term>
+        <listitem>
+        <para>Table for the b2b_entities module. More information can be found at: http://www.opensips.org/html/docs/modules/1.5.xb2b_entities.html
+        </para>
+    </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <link linkend="gen-db-b2b-logic">b2b_logic</link>
+        </term>
+        <listitem>
+        <para>Table for the b2b_logic module. More information can be found at: http://www.opensips.org/html/docs/modules/1.5.xb2b_logic.html
+        </para>
+    </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    <table id="gen-db-b2b-entities" frame="all">
+      <title>Table "b2b_entities"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>Unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>type</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>2</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Entity type: 0-server, 1-client</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>state</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>2</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Dialog state</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>ruri</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>RURI(stored only for server entities to correctly match CANCEL)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>from_uri</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>From URI</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>to_uri</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>To URI</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>from_dname</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>From display name</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>to_dname</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>To display name</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>tag0</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>TO tag</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>tag1</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>From tag</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>callid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Call ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>cseq0</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Cseq0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>cseq1</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Cseq1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>contact0</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Contact0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>contact1</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Contact1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>route0</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Record route 0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>route1</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Record route 1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sockinfo_srv</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Socket Info</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>param</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Logic parameter</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>lm</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Last method</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>lrc</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Last reply code</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>lic</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Last invite cseq</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>leg_cseq</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>11</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Leg cseq</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>leg_route</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>not specified</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Leg route</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>leg_tag</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Leg tag</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>leg_contact</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Leg contact</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>leg_sockinfo</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Leg sockinfo</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-b2b-entities-index" frame="all">
+      <title>Table "b2b_entities" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>b2b_entities_idx</varname>
+            </entry>
+            <entry>unique</entry>
+            <entry>type, tag0, tag1, callid</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-b2b-logic" frame="all">
+      <title>Table "b2b_logic"</title>
+      <tgroup cols="8" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>size</entry>
+            <entry>default</entry>
+            <entry>null</entry>
+            <entry>key</entry>
+            <entry>extra attributes</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>id</varname>
+            </entry>
+            <entry>
+              <varname>unsigned int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry>primary</entry>
+            <entry>autoincrement</entry>
+            <entry>
+              <para>Unique ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>si_key</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario instantiation key</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>scenario</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario id</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sstate</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>2</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario State</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>next_sstate</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>2</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Next Scenario State</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sparam0</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario id</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sparam1</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario id</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sparam2</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario id</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sparam3</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario id</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sparam4</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario id</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>sdp</varname>
+            </entry>
+            <entry>
+              <varname>text</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Scenario id</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>lifetime</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>10</constant>
+            </entry>
+            <entry>0</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>Lifetime</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e1_type</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>2</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E1 type</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e1_sid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E1 Scenario ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e1_from</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E1 From URI</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e1_to</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E1 To URI</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e1_key</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E1 Key</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e2_type</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>2</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E2 type</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e2_sid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E2 Scenario ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e2_from</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E2 From URI</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e2_to</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E2 To URI</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e2_key</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>no</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E2 Key</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e3_type</varname>
+            </entry>
+            <entry>
+              <varname>int</varname>
+            </entry>
+            <entry>
+              <constant>2</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E3 type</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e3_sid</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E3 Scenario ID</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e3_from</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E3 From URI</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e3_to</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>128</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E3 To URI</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <varname>e3_key</varname>
+            </entry>
+            <entry>
+              <varname>string</varname>
+            </entry>
+            <entry>
+              <constant>64</constant>
+            </entry>
+            <entry>default</entry>
+            <entry>yes</entry>
+            <entry> </entry>
+            <entry> </entry>
+            <entry>
+              <para>E3 Key</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <table id="gen-db-b2b-logic-index" frame="all">
+      <title>Table "b2b_logic" indexes</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+        <thead>
+          <row>
+            <entry>name</entry>
+            <entry>type</entry>
+            <entry>links</entry>
+            <entry>description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <varname>b2b_logic_idx</varname>
+            </entry>
+            <entry>unique</entry>
+            <entry>si_key</entry>
+            <entry>
+              <para> </para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </para>
+</chapter>
