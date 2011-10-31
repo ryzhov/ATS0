@@ -1,0 +1,22 @@
+; extensions.conf - the Asterisk dial plan
+[general]
+static=yes
+writeprotect=no
+autofallthrough=yes
+
+[default]
+exten => s,1,Answer()
+exten => s,n,Playback(en/hello)
+exten => s,n(new),Background(en/agent-newlocation)
+exten => s,n,WaitExten(15)
+
+exten => i,1,Playback(en/number)
+exten => i,n,Playback(en/not-yet-assigned)
+exten => i,n,Background(silence/2)
+exten => i,n,Goto(default,s,new)
+
+exten => t,1,Playback(en/goodbye)
+exten => t,n,Hangup()
+
+exten => 2200,1,Goto(default,s,1)
+exten => 2200#,1,Goto(default,s,1)

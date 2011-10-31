@@ -1,21 +1,21 @@
 ; extensions.conf - the Asterisk dial plan
 ;
 ; Static extension configuration file, used by
-; the pbx_config module. This is where you configure all your
-; inbound and outbound calls in Asterisk.
-;
-; This configuration file is reloaded
+; the pbx_config module. This is where you configure all your 
+; inbound and outbound calls in Asterisk. 
+; 
+; This configuration file is reloaded 
 ; - With the "dialplan reload" command in the CLI
 ; - With the "reload" command (that reloads everything) in the CLI
 
 ;
-; The "General" category is for certain variables.
+; The "General" category is for certain variables.  
 ;
 [general]
 ;
 ; If static is set to no, or omitted, then the pbx_config will rewrite
 ; this file when extensions are modified.  Remember that all comments
-; made in the file will be lost when that happens.
+; made in the file will be lost when that happens. 
 ;
 ; XXX Not yet implemented XXX
 ;
@@ -30,8 +30,8 @@ writeprotect=no
 ; things to do, it will terminate the call with BUSY, CONGESTION
 ; or HANGUP depending on Asterisk's best guess. This is the default.
 ;
-; If autofallthrough is not set, then if an extension runs out of
-; things to do, Asterisk will wait for a new extension to be dialed
+; If autofallthrough is not set, then if an extension runs out of 
+; things to do, Asterisk will wait for a new extension to be dialed 
 ; (this is the original behavior of Asterisk 1.0 and earlier).
 ;
 ;autofallthrough=no
@@ -41,7 +41,7 @@ writeprotect=no
 ; If extenpatternmatchnew is set (true, yes, etc), then a new algorithm that uses
 ; a Trie to find the best matching pattern is used. In dialplans
 ; with more than about 20-40 extensions in a single context, this
-; new algorithm can provide a noticeable speedup.
+; new algorithm can provide a noticeable speedup. 
 ; With 50 extensions, the speedup is 1.32x
 ; with 88 extensions, the speedup is 2.23x
 ; with 138 extensions, the speedup is 3.44x
@@ -49,27 +49,27 @@ writeprotect=no
 ; with 438 extensions, the speedup is 10.4x
 ; With 1000 extensions, the speedup is ~25x
 ; with 10,000 extensions, the speedup is 374x
-; Basically, the new algorithm provides a flat response
+; Basically, the new algorithm provides a flat response 
 ; time, no matter the number of extensions.
 ;
-; By default, the old pattern matcher is used.
+; By default, the old pattern matcher is used. 
 ;
 ; ****This is a new feature! *********************
-; The new pattern matcher is for the brave, the bold, and
+; The new pattern matcher is for the brave, the bold, and 
 ; the desperate. If you have large dialplans (more than about 50 extensions
-; in a context), and/or high call volume, you might consider setting
+; in a context), and/or high call volume, you might consider setting 
 ; this value to "yes" !!
 ; Please, if you try this out, and are forced to return to the
 ; old pattern matcher, please report your reasons in a bug report
-; on https://issues.asterisk.org. We have made good progress in providing
-; something compatible with the old matcher; help us finish the job!
+; on bugs.digium.com. We have made good progress in providing something
+; compatible with the old matcher; help us finish the job!
 ;
 ; This value can be switched at runtime using the cli command "dialplan set extenpatternmatchnew true"
 ; or "dialplan set extenpatternmatchnew false", so you can experiment to your hearts content.
 ;
 ;extenpatternmatchnew=no
 ;
-; If clearglobalvars is set, global variables will be cleared
+; If clearglobalvars is set, global variables will be cleared 
 ; and reparsed on a dialplan reload, or Asterisk reload.
 ;
 ; If clearglobalvars is not set, then global variables will persist
@@ -88,6 +88,14 @@ writeprotect=no
 ;
 clearglobalvars=no
 ;
+; If priorityjumping is set to 'yes', then applications that support
+; 'jumping' to a different priority based on the result of their operations
+; will do so (this is backwards compatible behavior with pre-1.2 releases
+; of Asterisk). Individual applications can also be requested to do this
+; by passing a 'j' option in their arguments.
+;
+;priorityjumping=yes
+;
 ; User context is where entries from users.conf are registered.  The
 ; default value is 'default'
 ;
@@ -102,7 +110,7 @@ clearglobalvars=no
 ;#include filename.conf
 ;
 ; You can execute a program or script that produces config files, and they
-; will be inserted where you insert the #exec command. The #exec command
+; will be inserted where you insert the #exec command. The #exec command 
 ; works on all asterisk configuration files.  However, you will need to
 ; activate them within asterisk.conf with the "execincludes" option.  They
 ; are otherwise considered a security risk.
@@ -155,8 +163,8 @@ TRUNKMSD=1					; MSD digits to strip (usually 1 or 0)
 ; yourself a ton of grief.
 ; WARNING WARNING WARNING WARNING
 ;
-; Any category other than "General" and "Globals" represent
-; extension contexts, which are collections of extensions.
+; Any category other than "General" and "Globals" represent 
+; extension contexts, which are collections of extensions.  
 ;
 ; Extension names may be numbers, letters, or combinations
 ; thereof. If an extension name is prefixed by a '_'
@@ -167,12 +175,12 @@ TRUNKMSD=1					; MSD digits to strip (usually 1 or 0)
 ;   Z - any digit from 1-9
 ;   N - any digit from 2-9
 ;   [1235-9] - any digit in the brackets (in this example, 1,2,3,5,6,7,8,9)
-;   . - wildcard, matches anything remaining (e.g. _9011. matches
+;   . - wildcard, matches anything remaining (e.g. _9011. matches 
 ;	anything starting with 9011 excluding 9011 itself)
 ;   ! - wildcard, causes the matching process to complete as soon as
 ;       it can unambiguously determine that no other matches are possible
 ;
-; For example, the extension _NXXXXXX would match normal 7 digit dialings,
+; For example, the extension _NXXXXXX would match normal 7 digit dialings, 
 ; while _1NXXNXXXXXX would represent an area code plus phone number
 ; preceded by a one.
 ;
@@ -199,7 +207,7 @@ TRUNKMSD=1					; MSD digits to strip (usually 1 or 0)
 ;[context]
 ;exten => someexten,{priority|label{+|-}offset}[(alias)],application(arg1,arg2,...)
 ;
-; Timing list for includes is
+; Timing list for includes is 
 ;
 ;   <time range>,<days of week>,<days of month>,<months>[,<timezone>]
 ;
@@ -248,7 +256,7 @@ TRUNKMSD=1					; MSD digits to strip (usually 1 or 0)
 ;
 ; If you are freely delivering calls to the PSTN, list them here
 ;
-;exten => _1256428XXXX,1,Dial(DAHDI/G2/${EXTEN:7}) ; Expose all of 256-428
+;exten => _1256428XXXX,1,Dial(DAHDI/G2/${EXTEN:7}) ; Expose all of 256-428 
 ;exten => _1256325XXXX,1,Dial(DAHDI/G2/${EXTEN:7}) ; Ditto for 256-325
 
 [dundi-e164-local]
@@ -274,15 +282,15 @@ switch => DUNDi/e164
 include => dundi-e164-local
 include => dundi-e164-switch
 ;
-; DUNDi can also be implemented as a Macro instead of using
-; the Local channel driver.
+; DUNDi can also be implemented as a Macro instead of using 
+; the Local channel driver. 
 ;
 [macro-dundi-e164]
 ;
 ; ARG1 is the extension to Dial
 ;
 ; Extension "s" is not a wildcard extension that matches "anything".
-; In macros, it is the start extension. In most other cases,
+; In macros, it is the start extension. In most other cases, 
 ; you have to goto "s" to execute that extension.
 ;
 ; For wildcard matches, see above - all pattern matches start with
@@ -369,10 +377,10 @@ include => iaxprovider
 include => parkedcalls
 ;
 ; You can use an alternative switch type as well, to resolve
-; extensions that are not known here, for example with remote
+; extensions that are not known here, for example with remote 
 ; IAX switching you transparently get access to the remote
 ; Asterisk PBX
-;
+; 
 ; switch => IAX2/user:password@bigserver/local
 ;
 ; An "lswitch" is like a switch but is literal, in that
@@ -420,9 +428,9 @@ same => n,Set(isnresult=${ENUMLOOKUP(${EXTEN},sip,,1,freenum.org)})     ; perfor
 same => n,GotoIf($["${isnresult}" != ""]?from)
 same => n,Set(DIALSTATUS=CONGESTION)
 same => n,Goto(fn-CONGESTION,1)
-same => n(from),Set(__SIPFROMUSER=${CALLERID(num)})
+same => n(from),Set(SIPFROMUSER=${CALLERID(num)})
 same => n,GotoIf($["${GLOBAL(FREENUMDOMAIN)}" = ""]?dial)               ; check if we set the FREENUMDOMAIN global variable in [global]
-same => n,Set(__SIPFROMDOMAIN=${GLOBAL(FREENUMDOMAIN)})                 ;    if we did set it, then we'll use it for our outbound dialing domain
+same => n,Set(SIPFROMDOMAIN=${GLOBAL(FREENUMDOMAIN)})                   ;    if we did set it, then we'll use it for our outbound dialing domain
 same => n(dial),Dial(SIP/${isnresult},40)
 same => n,Goto(fn-${DIALSTATUS},1)
 
@@ -433,7 +441,7 @@ same => n,Congestion()
 
 [macro-trunkdial]
 ;
-; Standard trunk dial macro (hangs up on a dialstatus that should
+; Standard trunk dial macro (hangs up on a dialstatus that should 
 ; terminate call)
 ;   ${ARG1} - What to dial
 ;
@@ -448,7 +456,7 @@ exten => _s-.,1,NoOp
 ; Standard extension subroutine:
 ;   ${EXTEN} - Extension
 ;   ${ARG1} - Device(s) to ring
-;   ${ARG2} - Optional context in Voicemail
+;   ${ARG2} - Optional context in Voicemail (if empty, then "default")
 ;
 ; Note that the current version will drop through to the next priority in the
 ; case of their pressing '#'.  This gives more flexibility in what do to next:
@@ -465,19 +473,23 @@ exten => _X.,50000(stdexten),NoOp(Start stdexten)
 exten => _X.,n,Set(LOCAL(ext)=${EXTEN})
 exten => _X.,n,Set(LOCAL(dev)=${ARG1})
 exten => _X.,n,Set(LOCAL(cntx)=${ARG2})
-exten => _X.,n,Set(LOCAL(mbx)=${ext}${IF($[!${ISNULL(${cntx})}]?@${cntx})})
-exten => _X.,n,Dial(${dev},20)				; Ring the interface, 20 seconds maximum
+
+exten => _X.,n,Set(LOCAL(mbx)="${ext}"$["${cntx}" ? "@${cntx}" :: ""])
+exten => _X.,n,Dial(${dev},20)			; Ring the interface, 20 seconds maximum
 exten => _X.,n,Goto(stdexten-${DIALSTATUS},1)		; Jump based on status (NOANSWER,BUSY,CHANUNAVAIL,CONGESTION,ANSWER)
 
 exten => stdexten-NOANSWER,1,Voicemail(${mbx},u)	; If unavailable, send to voicemail w/ unavail announce
+exten => stdexten-NOANSWER,n,NoOp(Finish stdexten NOANSWER)
 exten => stdexten-NOANSWER,n,Return()			; If they press #, return to start
 
-exten => stdexten-BUSY,1,Voicemail(${mbx},b)		; If busy, send to voicemail w/ busy announce
+exten => stdexten-BUSY,1,Voicemail(${mbx},b)
+						; If busy, send to voicemail w/ busy announce
+exten => stdexten-BUSY,n,NoOp(Finish stdexten BUSY)
 exten => stdexten-BUSY,n,Return()			; If they press #, return to start
 
 exten => _stde[x]te[n]-.,1,Goto(stdexten-NOANSWER,1)	; Treat anything else as no answer
 
-exten => a,1,VoicemailMain(${mbx})			; If they press *, send the user into VoicemailMain
+exten => a,1,VoicemailMain(${mbx})		; If they press *, send the user into VoicemailMain
 exten => a,n,Return()
 
 [stdPrivacyexten]
@@ -499,7 +511,7 @@ exten => _X.,n,Set(LOCAL(tortcntx)=${ARG4})
 exten => _X.,n,Set(LOCAL(cntx)=${ARG5})
 
 exten => _X.,n,Set(LOCAL(mbx)="${ext}"$["${cntx}" ? "@${cntx}" :: ""])
-exten => _X.,n,Dial(${dev},20,p)			; Ring the interface, 20 seconds maximum, call screening
+exten => _X.,n,Dial(${dev},20,p)			; Ring the interface, 20 seconds maximum, call screening 
 						; option (or use P for databased call _X.creening)
 exten => _X.,n,Goto(stdexten-${DIALSTATUS},1)		; Jump based on status (NOANSWER,BUSY,CHANUNAVAIL,CONGESTION,ANSWER)
 
@@ -529,7 +541,7 @@ exten => a,n,Return
 ;   ${ARG1} - Device to page
 
 exten => s,1,ChanIsAvail(${ARG1},s)			; s is for ANY call
-exten => s,n,GoToIf($[${AVAILSTATUS} = "1"]?autoanswer:fail)
+exten => s,n,GoToIf($[${AVAILORIGCHAN} = ""]?fail:autoanswer)
 exten => s,n(autoanswer),Set(_ALERT_INFO="RA")			; This is for the PolyComs
 exten => s,n,SIPAddHeader(Call-Info: Answer-After=0)	; This is for the Grandstream, Snoms, and Others
 exten => s,n,NoOp()					; Add others here and Post on the Wiki!!!!
@@ -561,7 +573,7 @@ exten => 1000,1,Goto(default,s,1)
 ; We also create an example user, 1234, who is on the console and has
 ; voicemail, etc.
 ;
-exten => 1234,1,Playback(transfer,skip)		; "Please hold while..."
+exten => 1234,1,Playback(transfer,skip)		; "Please hold while..." 
 					; (but skip if channel is not up)
 exten => 1234,n,Gosub(${EXTEN},stdexten(${GLOBAL(CONSOLE)}))
 exten => 1234,n,Goto(default,s,1)		; exited Voicemail
@@ -624,7 +636,7 @@ exten => 8500,n,Goto(s,6)
 
 ;
 ;	The page context calls up the page macro that sets variables needed for auto-answer
-;	It is in is own context to make calling it from the Page() application as simple as
+;	It is in is own context to make calling it from the Page() application as simple as 
 ;	Local/{peername}@page
 ;
 [page]
@@ -651,7 +663,7 @@ exten => _X.,1,Macro(page,SIP/${EXTEN})
 
 [default]
 ;
-; By default we include the demo.  In a production system, you
+; By default we include the demo.  In a production system, you 
 ; probably don't want to have the demo there.
 ;
 include => demo
@@ -828,7 +840,7 @@ exten => _X.,n,Return()
 ; friendly Asterisk CLI prompt.
 ;
 ; "core show application <command>" will show details of how you
-; use that particular application in this file, the dial plan.
+; use that particular application in this file, the dial plan. 
 ; "core show functions" will list all dialplan functions
 ; "core show function <COMMAND>" will show you more information about
 ; one function. Remember that function names are UPPER CASE.
