@@ -3,7 +3,7 @@
 to enable modules in exclude_modules string
 
 #cd /home/ran/ATS0/ser/build-1.7.0/opensips-1.7.0-beta-notls
-#make all
+#make prefix=/usr/local all
 #sudo make prefix=/usr/local install
 
 #vi /etc/rsyslog.conf

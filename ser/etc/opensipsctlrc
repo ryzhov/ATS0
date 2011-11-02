@@ -19,7 +19,7 @@ SIP_DOMAIN=v.uiptel.com
 DBENGINE=MYSQL
 
 ## database host
-DBHOST=localhost
+DBHOST=loc.uiptel.com
 
 ## database name (for ORACLE this is TNS name)
 DBNAME=opensips
@@ -28,16 +28,16 @@ DBNAME=opensips
 # DB_PATH="/usr/local/etc/opensips/dbtext"
 
 ## database read/write user
-DBRWUSER=opensips
+DBRWUSER=ser
 
 ## password for database read/write user
-DBRWPW=pass4sips
+DBRWPW=pass4ser
 
 ## database read only user
-DBROUSER=opensips
+DBROUSER=ser
 
 ## password for database read only user
-DBROPW=pass4sips
+DBROPW=pass4ser
 
 ## database super user (for ORACLE this is 'scheme-creator' user)
 DBROOTUSER="root"
