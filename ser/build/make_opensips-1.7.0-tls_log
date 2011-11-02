@@ -1,0 +1,898 @@
+bison -d -b cfg cfg.y
+flex cfg.lex
+Compiling action.c
+Compiling blacklists.c
+Compiling core_stats.c
+Compiling crc.c
+Compiling daemonize.c
+Compiling data_lump.c
+Compiling data_lump_rpl.c
+Compiling dprint.c
+Compiling dset.c
+Compiling errinfo.c
+Compiling error.c
+Compiling flags.c
+Compiling forward.c
+Compiling io_wait.c
+Compiling ip_addr.c
+Compiling main.c
+Compiling map.c
+Compiling md5.c
+Compiling md5utils.c
+Compiling memcache.c
+Compiling mod_fix.c
+Compiling modparam.c
+Compiling msg_callbacks.c
+Compiling msg_translator.c
+Compiling name_alias.c
+Compiling pass_fd.c
+Compiling prime_hash.c
+Compiling proxy.c
+Compiling pt.c
+Compiling pvar.c
+Compiling qvalue.c
+Compiling re.c
+Compiling receive.c
+Compiling regexp.c
+Compiling resolve.c
+Compiling route.c
+Compiling route_struct.c
+Compiling script_cb.c
+Compiling script_var.c
+Compiling sctp_server.c
+Compiling serialize.c
+Compiling socket_info.c
+Compiling sr_module.c
+Compiling statistics.c
+Compiling strcommon.c
+Compiling tcp_main.c
+Compiling tcp_read.c
+Compiling timer.c
+Compiling time_rec.c
+Compiling transformations.c
+Compiling tsend.c
+Compiling udp_server.c
+Compiling usr_avp.c
+Compiling ut.c
+Compiling xlog.c
+Compiling mem/f_malloc.c
+Compiling mem/mem.c
+Compiling mem/memtest.c
+Compiling mem/q_malloc.c
+Compiling mem/shm_mem.c
+Compiling mem/vq_malloc.c
+Compiling aaa/aaa.c
+Compiling parser/hf.c
+Compiling parser/msg_parser.c
+Compiling parser/parse_allow.c
+Compiling parser/parse_authenticate.c
+Compiling parser/parse_call_info.c
+Compiling parser/parse_content.c
+Compiling parser/parse_cseq.c
+Compiling parser/parse_disposition.c
+Compiling parser/parse_diversion.c
+Compiling parser/parse_event.c
+Compiling parser/parse_expires.c
+Compiling parser/parse_fline.c
+Compiling parser/parse_from.c
+Compiling parser/parse_hname2.c
+Compiling parser/parse_methods.c
+Compiling parser/parse_multipart.c
+Compiling parser/parse_nameaddr.c
+Compiling parser/parse_pai.c
+Compiling parser/parse_param.c
+Compiling parser/parse_ppi.c
+Compiling parser/parse_privacy.c
+Compiling parser/parse_refer_to.c
+Compiling parser/parse_replaces.c
+Compiling parser/parser_f.c
+Compiling parser/parse_rpid.c
+Compiling parser/parse_rr.c
+Compiling parser/parse_sipifmatch.c
+Compiling parser/parse_sst.c
+Compiling parser/parse_supported.c
+Compiling parser/parse_to.c
+Compiling parser/parse_uri.c
+Compiling parser/parse_via.c
+Compiling parser/digest/digest.c
+Compiling parser/digest/digest_parser.c
+Compiling parser/digest/param_parser.c
+Compiling parser/sdp/sdp.c
+Compiling parser/sdp/sdp_helpr_funcs.c
+Compiling parser/contact/contact.c
+Compiling parser/contact/parse_contact.c
+Compiling db/db.c
+Compiling db/db_id.c
+Compiling db/db_insertq.c
+Compiling db/db_pool.c
+Compiling db/db_query.c
+Compiling db/db_res.c
+Compiling db/db_row.c
+Compiling db/db_ut.c
+Compiling mi/attr.c
+Compiling mi/fmt.c
+Compiling mi/mi.c
+Compiling mi/mi_core.c
+Compiling mi/tree.c
+Compiling evi/event_interface.c
+Compiling evi/evi_core.c
+Compiling evi/evi_params.c
+Compiling evi/evi_transport.c
+Compiling lex.yy.c
+Compiling cfg.tab.c
+Linking opensips
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/acc'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/acc'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/acc'
+Compiling acc.c
+Compiling acc_extra.c
+Compiling acc_logic.c
+Compiling acc_mod.c
+Compiling diam_avp.c
+Compiling diam_message.c
+Compiling diam_tcp.c
+Linking acc.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/acc'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/alias_db'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/alias_db'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/alias_db'
+Compiling alias_db.c
+Compiling alookup.c
+Linking alias_db.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/alias_db'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth'
+Compiling api.c
+Compiling auth_mod.c
+Compiling challenge.c
+Compiling common.c
+Compiling index.c
+Compiling nonce.c
+Compiling rfc2617.c
+Compiling rpid.c
+Linking auth.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_aaa'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_aaa'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_aaa'
+Compiling authaaa_mod.c
+Compiling authorize.c
+Compiling sterman.c
+Linking auth_aaa.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_aaa'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_db'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_db'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_db'
+Compiling authdb_mod.c
+Compiling authorize.c
+Linking auth_db.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_db'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_diameter'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_diameter'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_diameter'
+Compiling auth_diameter.c
+Compiling authorize.c
+Compiling avp.c
+Compiling message.c
+Compiling tcp_comm.c
+Compiling user_in.c
+Linking auth_diameter.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/auth_diameter'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/avpops'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/avpops'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/avpops'
+Compiling avpops.c
+Compiling avpops_db.c
+Compiling avpops_impl.c
+Compiling avpops_parse.c
+Linking avpops.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/avpops'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/b2b_entities'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/b2b_entities'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/b2b_entities'
+Compiling b2be_db.c
+Compiling b2b_entities.c
+Compiling client.c
+Compiling dlg.c
+Compiling server.c
+Linking b2b_entities.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/b2b_entities'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/benchmark'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/benchmark'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/benchmark'
+Compiling benchmark.c
+Linking benchmark.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/benchmark'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/call_control'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/call_control'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/call_control'
+Compiling call_control.c
+Linking call_control.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/call_control'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/cfgutils'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/cfgutils'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/cfgutils'
+Compiling cfgutils.c
+Compiling env_var.c
+Compiling shvar.c
+Linking cfgutils.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/cfgutils'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/closeddial'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/closeddial'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/closeddial'
+Compiling cdlookup.c
+Compiling closeddial.c
+Linking closeddial.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/closeddial'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_flatstore'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_flatstore'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_flatstore'
+Compiling flat_con.c
+Compiling flat_id.c
+Compiling flat_mi.c
+Compiling flat_pool.c
+Compiling flatstore.c
+Compiling flatstore_mod.c
+Linking db_flatstore.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_flatstore'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_mysql'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_mysql'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_mysql'
+Compiling dbase.c
+Compiling db_mysql.c
+Compiling my_con.c
+Compiling res.c
+Compiling row.c
+Compiling val.c
+Linking db_mysql.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_mysql'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_text'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_text'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_text'
+Compiling dbt_api.c
+Compiling dbt_base.c
+Compiling dbtext.c
+Compiling dbt_file.c
+Compiling dbt_lib.c
+Compiling dbt_res.c
+Compiling dbt_tb.c
+Compiling dbt_util.c
+Linking db_text.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_text'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_virtual'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_virtual'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_virtual'
+Compiling dbase.c
+Compiling db_virtual.c
+Linking db_virtual.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/db_virtual'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/dialog'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/dialog'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/dialog'
+Compiling dialog.c
+Compiling dlg_cb.c
+Compiling dlg_db_handler.c
+Compiling dlg_handlers.c
+Compiling dlg_hash.c
+Compiling dlg_profile.c
+Compiling dlg_req_within.c
+Compiling dlg_timer.c
+Compiling dlg_tophiding.c
+Compiling dlg_vals.c
+Linking dialog.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/dialog'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/dispatcher'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/dispatcher'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/dispatcher'
+Compiling dispatch.c
+Compiling dispatcher.c
+Linking dispatcher.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/dispatcher'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/diversion'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/diversion'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/diversion'
+Compiling diversion.c
+Linking diversion.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/diversion'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/domain'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/domain'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/domain'
+Compiling api.c
+Compiling domain.c
+Compiling domain_mod.c
+Compiling hash.c
+Compiling mi.c
+Linking domain.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/domain'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/domainpolicy'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/domainpolicy'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/domainpolicy'
+Compiling domainpolicy.c
+Compiling domainpolicy_mod.c
+Linking domainpolicy.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/domainpolicy'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/drouting'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/drouting'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/drouting'
+Compiling dr_bl.c
+Compiling dr_load.c
+Compiling drouting.c
+Compiling prefix_tree.c
+Compiling routing.c
+Linking drouting.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/drouting'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/enum'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/enum'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/enum'
+Compiling enum.c
+Compiling enum_mod.c
+Linking enum.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/enum'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/event_datagram'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/event_datagram'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/event_datagram'
+Compiling event_datagram.c
+Linking event_datagram.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/event_datagram'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/exec'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/exec'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/exec'
+Compiling exec.c
+Compiling exec_hf.c
+Compiling exec_mod.c
+Compiling kill.c
+Linking exec.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/exec'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/gflags'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/gflags'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/gflags'
+Compiling gflags.c
+Linking gflags.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/gflags'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/group'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/group'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/group'
+Compiling group.c
+Compiling group_mod.c
+Compiling re_group.c
+Linking group.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/group'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/imc'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/imc'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/imc'
+Compiling imc.c
+Compiling imc_cmd.c
+Compiling imc_mng.c
+Linking imc.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/imc'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/load_balancer'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/load_balancer'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/load_balancer'
+Compiling lb_data.c
+Compiling lb_db.c
+Compiling lb_parser.c
+Compiling lb_prober.c
+Compiling load_balancer.c
+Linking load_balancer.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/load_balancer'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/localcache'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/localcache'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/localcache'
+Compiling hash.c
+Compiling localcache.c
+Linking localcache.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/localcache'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mangler'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mangler'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mangler'
+Compiling contact_ops.c
+Compiling ip_helper.c
+Compiling mangler.c
+Compiling sdp_mangler.c
+Compiling utils.c
+Linking mangler.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mangler'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/maxfwd'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/maxfwd'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/maxfwd'
+Compiling maxfwd.c
+Compiling mf_funcs.c
+Linking maxfwd.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/maxfwd'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mediaproxy'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mediaproxy'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mediaproxy'
+Compiling mediaproxy.c
+Linking mediaproxy.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mediaproxy'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mi_datagram'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mi_datagram'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mi_datagram'
+Compiling datagram_fnc.c
+Compiling mi_datagram.c
+Compiling mi_datagram_parser.c
+Compiling mi_datagram_writer.c
+Linking mi_datagram.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mi_datagram'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mi_fifo'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mi_fifo'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mi_fifo'
+Compiling fifo_fnc.c
+Compiling mi_fifo.c
+Compiling mi_parser.c
+Compiling mi_writer.c
+Linking mi_fifo.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/mi_fifo'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/msilo'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/msilo'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/msilo'
+Compiling msfuncs.c
+Compiling msilo.c
+Compiling ms_msg_list.c
+Linking msilo.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/msilo'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/nathelper'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/nathelper'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/nathelper'
+Compiling nathelper.c
+Linking nathelper.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/nathelper'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/nat_traversal'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/nat_traversal'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/nat_traversal'
+Compiling nat_traversal.c
+Linking nat_traversal.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/nat_traversal'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/options'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/options'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/options'
+Compiling mod_options.c
+Linking options.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/options'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/path'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/path'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/path'
+Compiling path.c
+Compiling path_mod.c
+Linking path.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/path'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/pdt'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/pdt'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/pdt'
+Compiling pdt.c
+Compiling pdtree.c
+Linking pdt.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/pdt'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/peering'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/peering'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/peering'
+Compiling peering.c
+Compiling verify.c
+Linking peering.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/peering'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/perl'
+xsubpp -typemap /usr/share/perl5/ExtUtils/typemap -typemap typemap opensipsxs.xs > opensipsxs.c
+gcc -fPIC -DPIC -g -O9 -funroll-loops -Wcast-align -Wall -minline-all-stringops -falign-loops -ftree-vectorize -mtune=nocona -Wold-style-definition -Wmissing-field-initializers -Wredundant-decls    -DNAME='"opensips"' -DVERSION='"1.7.0-notls"' -DARCH='"x86_64"' -DOS='"linux"' -DCOMPILER='"gcc 4.4.4"' -D__CPU_x86_64 -D__OS_linux -D__SMP_yes -DCFG_DIR='"/usr/local/etc/opensips/"' -DPKG_MALLOC -DSHM_MEM  -DSHM_MMAP -DUSE_IPV6 -DUSE_MCAST -DUSE_TCP -DDISABLE_NAGLE -DHAVE_RESOLV_RES -DSTATISTICS -DCHANGEABLE_DEBUG_LEVEL -DF_MALLOC  -DFAST_LOCK -DADAPTIVE_WAIT -DADAPTIVE_WAIT_LOOPS=1024  -DHAVE_GETHOSTBYNAME2 -DHAVE_UNION_SEMUN -DHAVE_SCHED_YIELD -DHAVE_MSG_NOSIGNAL -DHAVE_MSGHDR_MSG_CONTROL -DHAVE_ALLOCA_H -DHAVE_TIMEGM -DHAVE_EPOLL -DHAVE_SIGIO_RT -DHAVE_SELECT -Wno-unused -Wno-redundant-decls  -D_REENTRANT -D_GNU_SOURCE -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -I/usr/lib64/perl5/CORE  -c -o opensipsxs.o opensipsxs.c
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/perl'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/perl'
+Compiling perl.c
+Compiling perlfunc.c
+Linking perl.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/perl'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/permissions'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/permissions'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/permissions'
+Compiling address.c
+Compiling hash.c
+Compiling mi.c
+Compiling parse_config.c
+Compiling permissions.c
+Compiling rule.c
+Linking permissions.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/permissions'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/pike'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/pike'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/pike'
+Compiling ip_tree.c
+Compiling pike.c
+Compiling pike_funcs.c
+Compiling pike_mi.c
+Compiling timer.c
+Linking pike.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/pike'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/presence_callinfo'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/presence_callinfo'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/presence_callinfo'
+Compiling add_events.c
+Compiling presence_callinfo.c
+Linking presence_callinfo.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/presence_callinfo'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/presence_xcapdiff'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/presence_xcapdiff'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/presence_xcapdiff'
+Compiling presence_xcapdiff.c
+Linking presence_xcapdiff.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/presence_xcapdiff'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/qos'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/qos'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/qos'
+Compiling qos.c
+Compiling qos_cb.c
+Compiling qos_ctx_helpers.c
+Compiling qos_handlers.c
+Compiling qos_mi.c
+Linking qos.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/qos'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/ratelimit'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/ratelimit'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/ratelimit'
+Compiling ratelimit.c
+Linking ratelimit.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/ratelimit'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/registrar'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/registrar'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/registrar'
+Compiling common.c
+Compiling lookup.c
+Compiling path.c
+Compiling reg_mod.c
+Compiling regtime.c
+Compiling reply.c
+Compiling rerrno.c
+Compiling save.c
+Compiling sip_msg.c
+Linking registrar.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/registrar'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/rr'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/rr'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/rr'
+Compiling api.c
+Compiling loose.c
+Compiling record.c
+Compiling rr_cb.c
+Compiling rr_mod.c
+Linking rr.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/rr'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/rtpproxy'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/rtpproxy'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/rtpproxy'
+Compiling nhelpr_funcs.c
+Compiling rtpproxy.c
+Compiling rtpproxy_callbacks.c
+Compiling rtpproxy_stream.c
+Compiling timeout_process.c
+Linking rtpproxy.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/rtpproxy'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/seas'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/seas'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/seas'
+Compiling cluster.c
+Compiling encode_allow.c
+Compiling encode_contact.c
+Compiling encode_content_disposition.c
+Compiling encode_content_length.c
+Compiling encode_content_type.c
+Compiling encode_cseq.c
+Compiling encode_digest.c
+Compiling encode_expires.c
+Compiling encode_header.c
+Compiling encode_msg.c
+Compiling encode_parameters.c
+Compiling encode_route.c
+Compiling encode_to_body.c
+Compiling encode_uri.c
+Compiling encode_via.c
+Compiling event_dispatcher.c
+Compiling ha.c
+Compiling seas_action.c
+Compiling seas.c
+Compiling statistics.c
+Compiling utils.c
+Linking seas.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/seas'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/signaling'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/signaling'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/signaling'
+Compiling signaling.c
+Linking signaling.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/signaling'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/siptrace'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/siptrace'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/siptrace'
+Compiling siptrace.c
+Linking siptrace.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/siptrace'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sl'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sl'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sl'
+Compiling sl.c
+Compiling sl_cb.c
+Compiling sl_funcs.c
+Linking sl.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sl'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sms'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sms'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sms'
+Compiling libsms_charset.c
+Compiling libsms_getsms.c
+Compiling libsms_modem.c
+Compiling libsms_putsms.c
+Compiling sms.c
+Compiling sms_funcs.c
+Compiling sms_report.c
+Linking sms.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sms'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/speeddial'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/speeddial'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/speeddial'
+Compiling sdlookup.c
+Compiling speeddial.c
+Linking speeddial.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/speeddial'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sst'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sst'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sst'
+Compiling sst.c
+Compiling sst_handlers.c
+Compiling sst_mi.c
+Linking sst.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/sst'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/statistics'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/statistics'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/statistics'
+Compiling statistics.c
+Compiling stats_funcs.c
+Linking statistics.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/statistics'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/stun'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/stun'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/stun'
+Compiling stun.c
+Linking stun.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/stun'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/textops'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/textops'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/textops'
+Compiling codecs.c
+Compiling textops.c
+Linking textops.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/textops'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/tm'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/tm'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/tm'
+Compiling callid.c
+Compiling dlg.c
+Compiling h_table.c
+Compiling lock.c
+Compiling mi.c
+Compiling sip_msg.c
+Compiling t_cancel.c
+Compiling t_dlg.c
+Compiling t_fifo.c
+Compiling t_funcs.c
+Compiling t_fwd.c
+Compiling t_hooks.c
+Compiling timer.c
+Compiling t_lookup.c
+Compiling tm.c
+Compiling t_msgbuilder.c
+Compiling t_reply.c
+Compiling uac.c
+Linking tm.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/tm'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac'
+Compiling auth.c
+Compiling replace.c
+Compiling uac.c
+Linking uac.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_auth'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_auth'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_auth'
+Compiling auth.c
+Compiling uac_auth.c
+Linking uac_auth.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_auth'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_redirect'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_redirect'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_redirect'
+Compiling rd_filter.c
+Compiling rd_funcs.c
+Compiling redirect.c
+Linking uac_redirect.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_redirect'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_registrant'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_registrant'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_registrant'
+Compiling registrant.c
+Compiling reg_records.c
+Linking uac_registrant.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uac_registrant'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uri'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uri'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uri'
+Compiling aaa_checks.c
+Compiling checks.c
+Compiling db_checks.c
+Compiling uri_mod.c
+Linking uri.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/uri'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/userblacklist'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/userblacklist'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/userblacklist'
+Compiling db.c
+Compiling dt.c
+Compiling userblacklist.c
+Linking userblacklist.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/userblacklist'
+
+
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/usrloc'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/usrloc'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/usrloc'
+Compiling dlist.c
+Compiling hslot.c
+Compiling ucontact.c
+Compiling udomain.c
+Compiling ul_callback.c
+Compiling ul_mi.c
+Compiling ul_mod.c
+Compiling urecord.c
+Compiling usrloc.c
+Compiling utime.c
+Linking usrloc.so
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/modules/usrloc'
+cd utils/opensipsunix; make all
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/utils/opensipsunix'
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/utils/opensipsunix'
+make[1]: Entering directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/utils/opensipsunix'
+Compiling opensipsunix.c
+Linking opensipsunix
+make[1]: Leaving directory `/home/ran/ATS0/ser/build/opensips-1.7.0-tls/utils/opensipsunix'
+if [ "no" = "yes" ]; then \
+			cd utils/db_berkeley; make all ; \
+		fi ;
+if [ "no" = "yes" ]; then \
+			cd utils/db_oracle; make all ; \
+		fi ;
