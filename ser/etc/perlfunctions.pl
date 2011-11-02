@@ -51,7 +51,7 @@ sub authorize {
     my $auth = $m->getHeader("Authorization");
     my $contact = $m->getHeader("Contact");
     my $authType;
-    my $res = 'ok';
+    my $res = 'vokrug';
     my %params;
 
     
@@ -66,7 +66,7 @@ sub authorize {
 	foreach $key (sort keys %params) {
 	    $str .= "$key($params{$key}) ";
 	}
-	log(L_INFO,$str);
+	log(L_INFO,$authType . ' ' . $str);
 
 	if ($contact =~ /.*vokrug_token=([^;]*)/) {
 	    my $auth_key = $1;
@@ -74,7 +74,7 @@ sub authorize {
 		my $req = '{"user_id":"'.$params{'username'}.'","auth_key":"'.$auth_key.'"}';
 		my %rsp = &auth_vokr($req);
 		log(L_INFO,"$req -> $rsp{'status'}:$rsp{'msg'}");
-		#$res = 'fail' if ($rsp{'msg'} =~ /^{"result":0}$/);
+		$res = 'fail' if ($rsp{'msg'} =~ /^{"result":0}$/);
 	    } else {
 		log(L_INFO,"unsufisient credentials");
 		$res = 'digest';
@@ -87,7 +87,6 @@ sub authorize {
 
     } else {
 	$res = 'undefined';
-
     }
     
     #log(L_INFO, "res=".$res);
