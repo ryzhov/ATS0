@@ -66,7 +66,7 @@ sub authorize {
 	foreach $key (sort keys %params) {
 	    $str .= "$key($params{$key}) ";
 	}
-	log(L_INFO,$authType . ' ' . $str);
+	log(L_INFO, $contact . ' ' . $authType . ' ' . $str);
 
 	if ($contact =~ /.*vokrug_token=([^;]*)/) {
 	    my $auth_key = $1;
@@ -83,9 +83,8 @@ sub authorize {
 	} else {
 	    $res = 'digest';
 	}
-
-
     } else {
+	log(L_INFO, $contact . ' auth undefined');
 	$res = 'undefined';
     }
     
