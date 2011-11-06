@@ -68,19 +68,19 @@ sub authorize {
 	}
 	log(L_INFO, $contact . ' ' . $authType . ' ' . $str);
 
-	if ($contact =~ /.*vokrug_token=([^;]*)/) {
+	if ($contact =~ /.*vokrug_token=?([^;]*)/) {
 	    my $auth_key = $1;
 	    if ($params{'username'} && $auth_key) {
 		my $req = '{"user_id":"'.$params{'username'}.'","auth_key":"'.$auth_key.'"}';
 		my %rsp = &auth_vokr($req);
 		log(L_INFO,"$req -> $rsp{'status'}:$rsp{'msg'}");
-		$res = 'fail' if ($rsp{'msg'} =~ /^{"result":0}$/);
+		#$res = 'fail' if ($rsp{'msg'} =~ /^{"result":0}$/);
 	    } else {
-		log(L_INFO,"unsufisient credentials");
-		$res = 'digest';
+		log(L_INFO,"vokrug_auth unsuf user($params{'username'}) key($auth_key)");
+		#$res = 'digest';
 	    }
-
 	} else {
+	    log(L_INFO,"general authentication");
 	    $res = 'digest';
 	}
     } else {
