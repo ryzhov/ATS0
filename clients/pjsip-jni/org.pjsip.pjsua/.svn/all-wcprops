@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua
+END
+strip_comments.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/strip_comments.pl
+END
+pjsua.i_header
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/pjsua.i_header
+END
+add_swig_rename.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/add_swig_rename.pl
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/.project
+END
+strip_double_typedef_name.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/strip_double_typedef_name.pl
+END
+strip_unwanted_stuff.pl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/strip_unwanted_stuff.pl
+END
+libpjsua_jni.so
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/libpjsua_jni.so
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/build.properties
+END
+pjsua_jni.dll
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/pjsua_jni.dll
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/plugin.xml
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/.classpath
+END
+strip_unnecessary_stuff.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/strip_unnecessary_stuff.pl
+END
+print_funcs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/print_funcs.pl
+END
+find_missing_types.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/find_missing_types.sh
+END
+pjsua.i
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/pjsua.i
+END
+delete_blank_lines.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/delete_blank_lines.sh
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/pjsip-jni/!svn/ver/1/org.pjsip.pjsua/Makefile
+END

@@ -1,0 +1,1049 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua
+END
+SWIGTYPE_p_pjsip_endpoint.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_endpoint.java
+END
+SWIGTYPE_p_unsigned_int.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_unsigned_int.java
+END
+pjmedia_codec_param_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_codec_param_info.java
+END
+pjsip_event_body_user.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_body_user.java
+END
+pjsip_inv_state.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_inv_state.java
+END
+SWIGTYPE_p_f_int_p_pjsua_srv_pres_p_q_const__pj_str_t_pjsip_evsub_state_p_pjsip_event__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjsua_srv_pres_p_q_const__pj_str_t_pjsip_evsub_state_p_pjsip_event__void.java
+END
+pjsip_event_body_timer.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_body_timer.java
+END
+pjsip_generic_string_hdr.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_generic_string_hdr.java
+END
+SWIGTYPE_p_f_p_pj_pool_t_p_q_const__void__p_void.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_pj_pool_t_p_q_const__void__p_void.java
+END
+SWIGTYPE_p_f_p_pj_pool_factory__p_pjmedia_aud_dev_factory.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_pj_pool_factory__p_pjmedia_aud_dev_factory.java
+END
+pjsua_acc_config.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_acc_config.java
+END
+pjmedia_aud_dev_route.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_aud_dev_route.java
+END
+pjsip_status_code.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_status_code.java
+END
+pjmedia_codec_param_setting.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_codec_param_setting.java
+END
+SWIGTYPE_p_pj_ssize_t.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_ssize_t.java
+END
+SWIGTYPE_p_f_p_pjmedia_port__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_pjmedia_port__int.java
+END
+pj_pool_t.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_pool_t.java
+END
+SWIGTYPE_p_f_p_void_p_pjmedia_frame__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_void_p_pjmedia_frame__int.java
+END
+SWIGTYPE_p_pjmedia_format.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjmedia_format.java
+END
+SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_int_p_pjsip_rx_data_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_int_p_pjsip_rx_data_int__void.java
+END
+pjmedia_tone_desc.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_tone_desc.java
+END
+pjsip_hdr_vptr.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_hdr_vptr.java
+END
+pj_stun_auth_cred_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_stun_auth_cred_type.java
+END
+SWIGTYPE_p_pjsip_rx_data.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_rx_data.java
+END
+pj_stun_passwd_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_stun_passwd_type.java
+END
+SWIGTYPE_p_pjsip_dialog_cap_status.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_dialog_cap_status.java
+END
+pjsip_transport_type_e.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_transport_type_e.java
+END
+SWIGTYPE_p_pj_qos_params.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_qos_params.java
+END
+pjsip_event_body_tsx_state_src.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_body_tsx_state_src.java
+END
+pjsip_cred_info_ext.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_cred_info_ext.java
+END
+SWIGTYPE_p_pjsip_tp_state_callback.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_tp_state_callback.java
+END
+pjmedia_aud_param.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_aud_param.java
+END
+SWIGTYPE_p_pjmedia_aud_stream.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjmedia_aud_stream.java
+END
+pjsip_event_body_tx_error.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_body_tx_error.java
+END
+pjmedia_codec_fmtp.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_codec_fmtp.java
+END
+SWIGTYPE_p_pjsip_status_code.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_status_code.java
+END
+SWIGTYPE_p_f_int_p_q_const__pjsip_uri_p_q_const__pjsip_event__pjsip_redirect_op.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__pjsip_uri_p_q_const__pjsip_event__pjsip_redirect_op.java
+END
+SWIGTYPE_p_pjsip_media_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_media_type.java
+END
+SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t__void.java
+END
+SWIGTYPE_p_p_pjmedia_tone_digit_map.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_p_pjmedia_tone_digit_map.java
+END
+pjsip_redirect_op.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_redirect_op.java
+END
+SWIGTYPE_p_p_char.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_p_char.java
+END
+pjsua_sip_timer_use.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_sip_timer_use.java
+END
+pjsua_transport_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_transport_info.java
+END
+pjmedia_port_port_data.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_port_port_data.java
+END
+pjsua_buddy_status.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_buddy_status.java
+END
+pjsua_call_media_status.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_call_media_status.java
+END
+pj_thread_t.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_thread_t.java
+END
+pjsua_call_info_buf_.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_call_info_buf_.java
+END
+pj_str_t.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_str_t.java
+END
+SWIGTYPE_p_pj_stun_nat_detect_result.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_stun_nat_detect_result.java
+END
+SWIGTYPE_p_pjsip_multipart_part.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_multipart_part.java
+END
+SWIGTYPE_p_pj_pool_callback.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_pool_callback.java
+END
+SWIGTYPE_p_f_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int__void.java
+END
+SWIGTYPE_p_pj_ice_strans_op.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_ice_strans_op.java
+END
+pjsua_callback.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_callback.java
+END
+SWIGTYPE_p_pjsip_method.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_method.java
+END
+SWIGTYPE_p_pjsip_host_port.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_host_port.java
+END
+SWIGTYPE_p_f_p_void_p_char_size_t__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_void_p_char_size_t__int.java
+END
+SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_q_const__pj_str_t_p_q_const__pj_str_t_p_pj_pool_t_p_enum_pj_stun_passwd_type_p_pj_str_t__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_q_const__pj_str_t_p_q_const__pj_str_t_p_pj_pool_t_p_enum_pj_stun_passwd_type_p_pj_str_t__int.java
+END
+SWIGTYPE_p_pj_time_val.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_time_val.java
+END
+pjsua_acc_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_acc_info.java
+END
+SWIGTYPE_p_pjsip_evsub_state.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_evsub_state.java
+END
+SWIGTYPE_p_f_int_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_int__void.java
+END
+SWIGTYPE_p_pj_pool_factory.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_pool_factory.java
+END
+SWIGTYPE_p_int.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_int.java
+END
+SWIGTYPE_p_pj_ice_sess_options.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_ice_sess_options.java
+END
+pjsip_cred_data_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_cred_data_type.java
+END
+SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t__int.java
+END
+SWIGTYPE_p_pjsip_uri.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_uri.java
+END
+pjsip_event_body_rx_msg.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_body_rx_msg.java
+END
+pjsua_transport_config.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_transport_config.java
+END
+pj_stun_auth_cred_data.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_stun_auth_cred_data.java
+END
+pjsip_cred_info_ext_aka.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_cred_info_ext_aka.java
+END
+SWIGTYPE_p_pjsip_pres_status.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_pres_status.java
+END
+pjsua_media_transport.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_media_transport.java
+END
+SWIGTYPE_p_pjmedia_transport.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjmedia_transport.java
+END
+SWIGTYPE_p_pj_turn_tp_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_turn_tp_type.java
+END
+pj_stun_auth_cred_data_dyn_cred.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_stun_auth_cred_data_dyn_cred.java
+END
+pj_stun_auth_cred.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_stun_auth_cred.java
+END
+pjsip_event_body_tsx_state.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_body_tsx_state.java
+END
+SWIGTYPE_p_f_pj_status_t_p_char_pj_size_t__pj_str_t.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_pj_status_t_p_char_pj_size_t__pj_str_t.java
+END
+SWIGTYPE_p_pjsip_transaction.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_transaction.java
+END
+SWIGTYPE_p_f_int_p_pjmedia_session_unsigned_int_p_p_pjmedia_port__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjmedia_session_unsigned_int_p_p_pjmedia_port__void.java
+END
+SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_enum_pjsip_status_code__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_enum_pjsip_status_code__void.java
+END
+SWIGTYPE_p_pj_qos_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_qos_type.java
+END
+pjsua_conf_port_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_conf_port_info.java
+END
+pjmedia_dir.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_dir.java
+END
+SWIGTYPE_p_f_int_p_pjsip_transaction_p_pjsip_event__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjsip_transaction_p_pjsip_event__void.java
+END
+pjsua_mwi_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_mwi_info.java
+END
+SWIGTYPE_p_pjsip_publishc_opt.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_publishc_opt.java
+END
+SWIGTYPE_p_f_int_p_pjsua_srv_pres_int_p_q_const__pj_str_t_p_pjsip_rx_data_p_enum_pjsip_status_code_p_pj_str_t_p_pjsua_msg_data__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjsua_srv_pres_int_p_q_const__pj_str_t_p_pjsip_rx_data_p_enum_pjsip_status_code_p_pj_str_t_p_pjsua_msg_data__void.java
+END
+SWIGTYPE_p_f_int_int_p_q_const__pj_str_t_int_p_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_int_p_q_const__pj_str_t_int_p_int__void.java
+END
+pjmedia_snd_port.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_snd_port.java
+END
+pjsuaJNI.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsuaJNI.java
+END
+SWIGTYPE_p_pjsip_regc_cbparam.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_regc_cbparam.java
+END
+SWIGTYPE_p_pjmedia_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjmedia_type.java
+END
+pjsua_call_hold_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_call_hold_type.java
+END
+pjmedia_codec_param.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_codec_param.java
+END
+SWIGTYPE_p_pjmedia_session.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjmedia_session.java
+END
+pjmedia_port_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_port_info.java
+END
+pjsua_call_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_call_info.java
+END
+pjsua_codec_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_codec_info.java
+END
+SWIGTYPE_p_f_int_p_pjsip_rx_data_p_int_p_pj_str_t__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjsip_rx_data_p_int_p_pj_str_t__void.java
+END
+pj_stun_auth_cred_data_static_cred.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_stun_auth_cred_data_static_cred.java
+END
+SWIGTYPE_p_pj_sockaddr.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_sockaddr.java
+END
+pjsip_cred_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_cred_info.java
+END
+SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_void_enum_pjsip_status_code_p_q_const__pj_str_t_p_pjsip_tx_data_p_pjsip_rx_data_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_void_enum_pjsip_status_code_p_q_const__pj_str_t_p_pjsip_tx_data_p_pjsip_rx_data_int__void.java
+END
+SWIGTYPE_p_pj_stun_nat_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_stun_nat_type.java
+END
+SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_pjsip_rx_data_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_p_pjsip_rx_data_int__void.java
+END
+SWIGTYPE_p_f_p_void_p_pj_pool_t_p_pj_str_t_p_pj_str_t__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_void_p_pj_pool_t_p_pj_str_t_p_pj_str_t__int.java
+END
+SWIGTYPE_p_f_int_pj_ice_strans_op_int_p_void__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_pj_ice_strans_op_int_p_void__void.java
+END
+SWIGTYPE_p_p_pjmedia_aud_stream.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_p_pjmedia_aud_stream.java
+END
+SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_void_enum_pjsip_status_code_p_q_const__pj_str_t__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_void_enum_pjsip_status_code_p_q_const__pj_str_t__void.java
+END
+SWIGTYPE_p_pjsip_transport.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_transport.java
+END
+SWIGTYPE_p_pjrpid_element.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjrpid_element.java
+END
+SWIGTYPE_p_pjmedia_sock_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjmedia_sock_info.java
+END
+pjsua_logging_config.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_logging_config.java
+END
+pjmedia_tone_digit.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_tone_digit.java
+END
+pj_stun_resolve_result.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_stun_resolve_result.java
+END
+SWIGTYPE_p_pjsua_srv_pres.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsua_srv_pres.java
+END
+SWIGTYPE_p_f_int_p_pjsua_reg_info__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjsua_reg_info__void.java
+END
+pjsua.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua.java
+END
+pjmedia_aud_dev_cap.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_aud_dev_cap.java
+END
+SWIGTYPE_p_f_int_int_p_pjsip_rx_data__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_int_p_pjsip_rx_data__void.java
+END
+pjsua_reg_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_reg_info.java
+END
+SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__pj_str_t_p_q_const__pj_str_t_p_q_const__pj_str_t_int__void.java
+END
+pjsua_buddy_config.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_buddy_config.java
+END
+SWIGTYPE_p_pjsip_cred_cb.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_cred_cb.java
+END
+pj_ice_sess_options.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_ice_sess_options.java
+END
+SWIGTYPE_p_f_int_p_pjsua_mwi_info__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjsua_mwi_info__void.java
+END
+SWIGTYPE_p_pjsip_evsub.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_evsub.java
+END
+SWIGTYPE_p_f_int_p_q_const__char_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_q_const__char_int__void.java
+END
+SWIGTYPE_p_pj_timer_entry.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_timer_entry.java
+END
+SWIGTYPE_p_f_p_pjmedia_port_p_pjmedia_frame__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_pjmedia_port_p_pjmedia_frame__int.java
+END
+SWIGTYPE_p_f_int_p_pjsip_evsub_p_pjsip_event__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjsip_evsub_p_pjsip_event__void.java
+END
+pjsua_media_config.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_media_config.java
+END
+pjsua_config.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_config.java
+END
+SWIGTYPE_p_f_int_p_pjmedia_session_unsigned_int__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjmedia_session_unsigned_int__void.java
+END
+pjmedia_codec_fmtp_param.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_codec_fmtp_param.java
+END
+pjmedia_port.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_port.java
+END
+SWIGTYPE_p_f_p_q_const__pj_stun_nat_detect_result__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_q_const__pj_stun_nat_detect_result__void.java
+END
+pjmedia_tone_digit_map_digits.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_tone_digit_map_digits.java
+END
+SWIGTYPE_p_pjsip_tls_setting.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_tls_setting.java
+END
+SWIGTYPE_p_f_int_p_pjsip_event__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_int_p_pjsip_event__void.java
+END
+SWIGTYPE_p_pj_stun_passwd_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_stun_passwd_type.java
+END
+pjsuaConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsuaConstants.java
+END
+pjsua_msg_data.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_msg_data.java
+END
+SWIGTYPE_p_pjsip_role_e.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_role_e.java
+END
+pjsua_buddy_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsua_buddy_info.java
+END
+pj_turn_tp_type.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pj_turn_tp_type.java
+END
+pjmedia_snd_dev_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_snd_dev_info.java
+END
+SWIGTYPE_p_pj_pool_block.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pj_pool_block.java
+END
+pjsip_event.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event.java
+END
+pjsip_hdr_e.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_hdr_e.java
+END
+SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_pj_pool_t_p_pj_str_t_p_pj_str_t_p_pj_str_t_p_pj_stun_passwd_type_p_pj_str_t__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_pj_pool_t_p_pj_str_t_p_pj_str_t_p_pj_str_t_p_pj_stun_passwd_type_p_pj_str_t__int.java
+END
+SWIGTYPE_p_f_p_pjmedia_port_p_q_const__pjmedia_frame__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_pjmedia_port_p_q_const__pjmedia_frame__int.java
+END
+SWIGTYPE_p_pjsip_timer_setting.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_timer_setting.java
+END
+SWIGTYPE_p_pjsip_auth_clt_pref.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_auth_clt_pref.java
+END
+SWIGTYPE_p_pjsip_tx_data.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjsip_tx_data.java
+END
+pjsip_event_body.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_body.java
+END
+SWIGTYPE_p_p_pjmedia_port.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_p_pjmedia_port.java
+END
+pjsip_event_id_e.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_id_e.java
+END
+pjmedia_tone_digit_map.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_tone_digit_map.java
+END
+pjmedia_aud_dev_info.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_aud_dev_info.java
+END
+SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_pj_pool_t_p_pj_str_t_p_pj_str_t_p_pj_str_t_p_enum_pj_stun_passwd_type_p_pj_str_t__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_pj_pool_t_p_pj_str_t_p_pj_str_t_p_pj_str_t_p_enum_pj_stun_passwd_type_p_pj_str_t__int.java
+END
+SWIGTYPE_p_pjmedia_endpt.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_pjmedia_endpt.java
+END
+SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_q_const__pj_str_t_p_q_const__pj_str_t_p_pj_pool_t_p_pj_stun_passwd_type_p_pj_str_t__int.java
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_q_const__pj_stun_msg_p_void_p_q_const__pj_str_t_p_q_const__pj_str_t_p_pj_pool_t_p_pj_stun_passwd_type_p_pj_str_t__int.java
+END
+SWIGTYPE_p_f_p_q_const__pj_stun_resolve_result__void.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_f_p_q_const__pj_stun_resolve_result__void.java
+END
+SWIGTYPE_p_p_pjsip_tx_data.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/SWIGTYPE_p_p_pjsip_tx_data.java
+END
+pjsip_hdr.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_hdr.java
+END
+pjsip_event_body_tx_msg.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjsip_event_body_tx_msg.java
+END
+Callback.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/Callback.java
+END
+pjmedia_format_id.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/pjsip-jni/!svn/ver/5/src/org/pjsip/pjsua/pjmedia_format_id.java
+END

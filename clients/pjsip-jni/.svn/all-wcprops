@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svnroot/pjsip-jni/!svn/ver/5
+END
+strip_comments.pl
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/pjsip-jni/!svn/ver/2/strip_comments.pl
+END
+pjsua.i_header
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/pjsip-jni/!svn/ver/5/pjsua.i_header
+END
+add_swig_rename.pl
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/pjsip-jni/!svn/ver/5/add_swig_rename.pl
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svnroot/pjsip-jni/!svn/ver/2/LICENSE
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svnroot/pjsip-jni/!svn/ver/4/.project
+END
+strip_double_typedef_name.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/pjsip-jni/!svn/ver/2/strip_double_typedef_name.pl
+END
+strip_unwanted_stuff.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/pjsip-jni/!svn/ver/2/strip_unwanted_stuff.pl
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/pjsip-jni/!svn/ver/5/build.properties
+END
+add_synchronised.pl
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/pjsip-jni/!svn/ver/5/add_synchronised.pl
+END
+pjsua_jni.dll
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svnroot/pjsip-jni/!svn/ver/5/pjsua_jni.dll
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svnroot/pjsip-jni/!svn/ver/3/README
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svnroot/pjsip-jni/!svn/ver/2/plugin.xml
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svnroot/pjsip-jni/!svn/ver/4/.classpath
+END
+strip_unnecessary_stuff.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/pjsip-jni/!svn/ver/2/strip_unnecessary_stuff.pl
+END
+print_funcs.pl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/pjsip-jni/!svn/ver/2/print_funcs.pl
+END
+find_missing_types.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/pjsip-jni/!svn/ver/2/find_missing_types.sh
+END
+pjsua.i
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svnroot/pjsip-jni/!svn/ver/5/pjsua.i
+END
+delete_blank_lines.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/pjsip-jni/!svn/ver/2/delete_blank_lines.sh
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svnroot/pjsip-jni/!svn/ver/5/Makefile
+END
